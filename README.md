@@ -1,7 +1,7 @@
 # Projek Subway, Pemrograman Mobile
-# Oleh
-# Airlangga Dwi Satrio / 082111633003
-# Rayhan Azazaka Firdaus Muzakom / 082111633059
+Oleh
+Airlangga Dwi Satrio / 082111633003
+Rayhan Azazaka Firdaus Muzakom / 082111633059
 
 A new Flutter project.
 
