@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:projek_kelompok/home.dart';
-import 'package:projek_kelompok/menu.dart';
-import 'package:projek_kelompok/reward.dart';
+import 'package:projek_kelompok/pages/home.dart';
+import 'package:projek_kelompok/pages/menu.dart';
+import 'package:projek_kelompok/pages/reward.dart';
 // import 'home.dart';
 
 

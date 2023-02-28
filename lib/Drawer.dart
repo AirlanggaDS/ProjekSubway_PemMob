@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:projek_kelompok/Login.dart';
-import 'package:projek_kelompok/menu.dart';
-import 'package:projek_kelompok/profil.dart';
-import 'package:projek_kelompok/reward.dart';
+import 'package:projek_kelompok/pages/Login.dart';
+import 'package:projek_kelompok/pages/menu.dart';
+import 'package:projek_kelompok/pages/profil.dart';
+import 'package:projek_kelompok/pages/reward.dart';
 
 class DrawerSide extends StatelessWidget {
   const DrawerSide({super.key});
