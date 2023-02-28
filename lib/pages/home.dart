@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
           Row(children: [
             Container(
               child: const Text(
-                "Hello User,",
+                "Hello User",
                 style: TextStyle(
                   color: Colors.white,
                   fontFamily: 'LexendDeca',
@@ -36,22 +36,6 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent, elevation: 0),
-              child: CircleAvatar(
-                backgroundColor: Colors.transparent,
-                radius: 10,
-                child: Icon(
-                  Icons.person_rounded,
-                  color: Colors.amber,
-                ),
-              ),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Profile()));
-              },
-            )
           ])
         ]),
       ),
