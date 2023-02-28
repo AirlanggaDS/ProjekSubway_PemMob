@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:projek_kelompok/pages/AccountCreate.dart';
 import 'package:projek_kelompok/pages/Login.dart';
 
 class SignUp extends StatefulWidget {
@@ -155,7 +156,7 @@ class _SignUpState extends State<SignUp> {
             ),
             onPressed: (){
             Navigator.push(context,
-            MaterialPageRoute(builder: (context)=> Login())
+            MaterialPageRoute(builder: (context)=> Create())
             );
           },
           child :
