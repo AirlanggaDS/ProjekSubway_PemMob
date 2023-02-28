@@ -39,7 +39,7 @@ class Profile extends StatelessWidget{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Padding(
-                      padding: EdgeInsets.only(left: 30),
+                      padding: EdgeInsets.only(left: 30, top: 10),
                       child: Text("Saldo", style: TextStyle(
                         fontFamily: 'LexendDeca',
                         fontSize: 30,

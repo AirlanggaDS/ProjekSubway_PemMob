@@ -52,7 +52,7 @@ class Menu extends StatelessWidget {
             ),
           ),
           flexibleSpace: Container(
-            color: Color.fromRGBO(0, 151, 67, 1),
+            color: Color.fromARGB(255, 3, 178, 58),
             height: 150,
           ),
           bottom: PreferredSize(

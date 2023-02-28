@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:projek_kelompok/home.dart';
 import 'package:projek_kelompok/menu.dart';
+import 'package:projek_kelompok/reward.dart';
 // import 'home.dart';
 
 
 
 class Navbar extends StatefulWidget {
   int _selectedIndex = 0;
-  List pages = [HomeScreen(),Menu()];
+  List pages = [HomeScreen(),Menu(),Reward()];
   Navbar({super.key});
 
   @override
@@ -42,7 +43,7 @@ class _NavbarState extends State<Navbar> {
             label: 'Reward',
           ),
         ],
-        backgroundColor: Color.fromRGBO(0, 151, 67, 1),
+        backgroundColor: Color.fromARGB(255, 3, 178, 58),
         selectedItemColor: Colors.amber,
         unselectedItemColor: Colors.white,
         showUnselectedLabels: true,

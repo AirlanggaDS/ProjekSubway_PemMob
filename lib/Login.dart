@@ -23,7 +23,7 @@ class _LoginState extends State<Login> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Color.fromRGBO(0, 151, 67, 1),
+      backgroundColor: Color.fromARGB(255, 3, 178, 58),
       body:
       Column(
         mainAxisSize: MainAxisSize.max,
@@ -133,7 +133,7 @@ class _LoginState extends State<Login> {
             child: 
             Padding(
               padding: const EdgeInsets.only(left: 145, top: 10),
-              child: Text("Login", style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold, fontSize: 20),),
+              child: Text("Login", style: TextStyle(color: Color.fromARGB(255, 3, 178, 58), fontWeight: FontWeight.bold, fontSize: 20),),
             )
           ),
           onPressed: (){
@@ -166,7 +166,7 @@ class _LoginState extends State<Login> {
             child: 
             Padding(
               padding: const EdgeInsets.only(left: 140, top: 10),
-              child: Text("Sign Up", style: TextStyle(color: Colors.green, fontWeight: FontWeight.bold, fontSize: 20),),
+              child: Text("Sign Up", style: TextStyle(color: Color.fromARGB(255, 3, 178, 58), fontWeight: FontWeight.bold, fontSize: 20),),
             )
           ),
            ),

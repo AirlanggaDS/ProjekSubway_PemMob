@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:projek_kelompok/Drawer.dart';
 import 'package:projek_kelompok/signup.dart';
 import './profil.dart';
 import './menu.dart';
@@ -13,7 +14,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.amber,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Color.fromRGBO(0, 151, 67, 1),
+        backgroundColor: Color.fromARGB(255, 3, 178, 58),
         title:
         
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
@@ -54,6 +55,7 @@ class HomeScreen extends StatelessWidget {
           ])
         ]),
       ),
+      drawer: DrawerSide(),
       body: ListView(
         children: [
           Container(
