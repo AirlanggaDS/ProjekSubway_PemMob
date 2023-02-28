@@ -12,6 +12,7 @@ class DrawerSide extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      // ignore: sort_child_properties_last
       child: 
       ListView(
         padding: EdgeInsets.zero,
@@ -49,11 +50,42 @@ class DrawerSide extends StatelessWidget {
           _drawerItem(
             icon: Icons.logout, 
             text: 'Logout', 
-            onTap: (){
-                Navigator.push(context,
-                MaterialPageRoute(builder: (context)=>Login())
-                );
-              }
+            onTap: () async {
+              print('tap');
+              showDialog(
+                context: context, 
+                builder: (context){
+                  return AlertDialog(
+      backgroundColor: Color.fromARGB(255, 3, 178, 58),
+      title: Text("Logout",style: TextStyle(color: Colors.amber)),
+      content: Text("Apakah anda yakin ingin logout?",style: TextStyle(color: Colors.amber)) ,
+      actions: [
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.transparent,
+              elevation: 0
+            ),
+          onPressed: (){
+            Navigator.push(context,
+            MaterialPageRoute(builder: (context)=> Login())
+            );
+          }, 
+          child: Text("Iya", style: TextStyle(color: Colors.amber),)),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.transparent,
+              elevation: 0
+            ),
+            onPressed: (){
+              Navigator.pop(context);
+            }, 
+            child: Text("Tidak",style: TextStyle(color: Colors.amber)))
+      ],
+      
+    );
+                },
+              );
+            },
             )
              
         ]
