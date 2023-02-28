@@ -1,27 +1,18 @@
-import 'package:easy_search_bar/easy_search_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:projek_kelompok/signup.dart';
 import './profil.dart';
 import './menu.dart';
+import 'Login.dart';
 
-void main() {
-  runApp(Home());
-}
-
-class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false, home: new HomeScreen());
-  }
-}
 
 class HomeScreen extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold( 
       backgroundColor: Colors.amber,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Color.fromRGBO(0, 151, 67, 1),
         title:
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
@@ -56,7 +47,7 @@ class HomeScreen extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Profile()));
+                    MaterialPageRoute(builder: (context) => Profile()));
               },
             )
           ])
@@ -99,10 +90,6 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                // EasySearchBar(
-                //   title: Text("Pencarian") ,
-                //   onSearch: (value) => setState(() => searchValue = value )),
-                // IconButton(onPressed: () {}, icon: Icon(Icons.search), color: Colors.grey,)
               ],
             ),
           ),
@@ -245,28 +232,6 @@ class HomeScreen extends StatelessWidget {
             ],
           )
         ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color.fromRGBO(0, 151, 67, 1),
-        selectedItemColor: Colors.amber,
-        unselectedItemColor: Colors.white,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.menu_book),
-            label: 'Menu',
-            
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.wallet_giftcard),
-            label: 'Reward',
-          ),
-        ],
-        currentIndex: 0,
-        
       ),
     );
   }

@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const MyApp());
-}
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Menu extends StatelessWidget {
+  const Menu({super.key});
 
   // This widget is the root of your application.
   @override
@@ -101,29 +98,6 @@ class MyApp extends StatelessWidget {
               ),
             ),
           ),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          backgroundColor: Color.fromRGBO(0, 151, 67, 1),
-          selectedItemColor: Colors.amber,
-          unselectedItemColor: Colors.white,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.menu_book),
-              label: 'Menu',
-              
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.wallet_giftcard),
-              label: 'Reward',
-            ),
-          ],
-          currentIndex: 1,
-          
         ),
         body: ListView(children: [
           Column(
