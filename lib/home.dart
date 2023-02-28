@@ -15,6 +15,7 @@ class HomeScreen extends StatelessWidget {
         automaticallyImplyLeading: false,
         backgroundColor: Color.fromRGBO(0, 151, 67, 1),
         title:
+        
             Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Container(
             child: Image.asset(
