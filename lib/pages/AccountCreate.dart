@@ -32,36 +32,25 @@ class Create extends StatelessWidget {
                 color: Colors.white,
               ),),
             ),
-            ElevatedButton(
-              style: 
-              ElevatedButton.styleFrom(
-                backgroundColor: Colors.transparent,
-                elevation: 0
+            InkWell(
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Login())),
+                child: Ink(
+                  padding: const EdgeInsets.symmetric(vertical: 12,),
+                 
+                  width: 300,
+                  decoration: BoxDecoration(
+                   color: Colors.amber,
+                   borderRadius: BorderRadius.circular(10)
+                  ),
+                  child: const Text(
+                    "Back to Login Page",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 3, 178, 58), fontWeight: FontWeight.bold, fontSize: 20),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
               ),
-              onPressed: (){
-                Navigator.push(context, 
-                MaterialPageRoute(builder: (context)=>Login())
-                );
-            }, child:
-           Container(
-            height: 50,
-            width: 350,
-            decoration: BoxDecoration(
-              color: Colors.amber,
-              borderRadius: BorderRadius.circular(10)
-            ),
-            child: 
-            Padding(
-              padding: const EdgeInsets.only(left: 87, top: 10),
-              child: Text('Back To Login Page',
-              style: TextStyle(
-                color: Color.fromARGB(255, 3, 178, 58),
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              )),
-            )
-           ) 
-            )
           ],
         )
       ),

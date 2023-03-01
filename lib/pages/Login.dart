@@ -10,8 +10,6 @@ class Login extends StatefulWidget {
   Login({super.key});
   bool checkedValue = false;
 
-  
-
   @override
   State<Login> createState() => _LoginState();
 }
@@ -20,11 +18,13 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      
       debugShowCheckedModeBanner: false,
       home: Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Color.fromARGB(255, 3, 178, 58),
       body:
+      
       Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -117,59 +117,98 @@ class _LoginState extends State<Login> {
               )
             ],
           ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.transparent,
-              elevation: 0
-            ),
-             child: 
-          Container(
-            height: 50,
-            width: 350,
-            decoration: BoxDecoration(
-              color: Colors.amber,
-              borderRadius: BorderRadius.circular(10)
-            ),
-            child: 
-            Padding(
-              padding: const EdgeInsets.only(left: 145, top: 10),
-              child: Text("Login", style: TextStyle(color: Color.fromARGB(255, 3, 178, 58), fontWeight: FontWeight.bold, fontSize: 20),),
-            )
-          ),
-          onPressed: (){
-            Navigator.push(context,
-            MaterialPageRoute(builder: (context)=> Navbar())
-            );
-          },
-          ),   
-          Padding(
-            padding: const EdgeInsets.only(top:100, bottom: 10),
+          InkWell(
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Navbar())),
+                child: Ink(
+                  padding: const EdgeInsets.symmetric(vertical: 12),
+                  width: 350,
+                  decoration: BoxDecoration(
+                   color: Colors.amber,
+                   borderRadius: BorderRadius.circular(10)
+                  ),
+                  child: const Text(
+                    "Login",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 3, 178, 58), fontWeight: FontWeight.bold, fontSize: 20),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+              Padding(
+            padding: const EdgeInsets.only(top:30, bottom: 10),
             child: Text("Doesn't have account?",style: TextStyle(color: Colors.white),),
           ),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.transparent,
-              elevation: 0
-            ),
-            onPressed: (){
-            Navigator.push(context,
-            MaterialPageRoute(builder: (context)=> SignUp())
-            );
-          }, child:
-          Container(
-            height: 50,
-            width: 350,
-            decoration: BoxDecoration(
-              color: Colors.amber,
-              borderRadius: BorderRadius.circular(10)
-            ),
-            child: 
-            Padding(
-              padding: const EdgeInsets.only(left: 140, top: 10),
-              child: Text("Sign Up", style: TextStyle(color: Color.fromARGB(255, 3, 178, 58), fontWeight: FontWeight.bold, fontSize: 20),),
-            )
-          ),
-           ),
+          // ElevatedButton(
+          //   style: ElevatedButton.styleFrom(
+          //     backgroundColor: Colors.transparent,
+          //     elevation: 0
+          //   ),
+          //    child: 
+          // Container(
+          //   height: 50,
+          //   width: 350,
+          //   decoration: BoxDecoration(
+          //     color: Colors.amber,
+          //     borderRadius: BorderRadius.circular(10)
+          //   ),
+          //   child: 
+          //   Padding(
+          //     padding: const EdgeInsets.only(left: 145, top: 10),
+          //     child: Text("Login", style: TextStyle(color: Color.fromARGB(255, 3, 178, 58), fontWeight: FontWeight.bold, fontSize: 20),),
+          //   )
+          // ),
+          // onPressed: (){
+          //   Navigator.push(context,
+          //   MaterialPageRoute(builder: (context)=> Navbar())
+          //   );
+          // },
+          // ),   
+          // 
+          InkWell(
+                onTap: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SignUp())),
+                child: Ink(
+                  padding: const EdgeInsets.symmetric(vertical: 12,),
+                 
+                  width: 350,
+                  decoration: BoxDecoration(
+                   color: Colors.amber,
+                   borderRadius: BorderRadius.circular(10)
+                  ),
+                  child: const Text(
+                    "Sign Up",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 3, 178, 58), fontWeight: FontWeight.bold, fontSize: 20),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+          // ElevatedButton(
+          //   style: ElevatedButton.styleFrom(
+          //     backgroundColor: Colors.transparent,
+          //     elevation: 0
+          //   ),
+          //   onPressed: (){
+          //   Navigator.push(context,
+          //   MaterialPageRoute(builder: (context)=> SignUp())
+          //   );
+          // }, child:
+          // Container(
+          //   height: 50,
+            
+          //   width: 350,
+          //   decoration: BoxDecoration(
+          //     color: Colors.amber,
+          //     borderRadius: BorderRadius.circular(10)
+          //   ),
+          //   child: 
+          //   Padding(
+          //     padding: const EdgeInsets.only(left: 140, top: 10),
+          //     child: Text("Sign Up", style: TextStyle(color: Color.fromARGB(255, 3, 178, 58), fontWeight: FontWeight.bold, fontSize: 20),),
+          //   )
+          // ),
+          //  ),
         ],
       )
     ), 
