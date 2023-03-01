@@ -1,5 +1,3 @@
-import 'dart:js_util';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -72,7 +70,7 @@ class _RewardState extends State<Reward> {
                   borderRadius: BorderRadius.circular(15),
                   color: Color.fromARGB(255,255,255,255)
                 ),
-                padding: EdgeInsets.all(50),
+                padding: EdgeInsets.all(30),
                 margin: EdgeInsets.only(top: 30),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 5, left: 5),
@@ -81,7 +79,7 @@ class _RewardState extends State<Reward> {
                         children: [
                           Text("Saldo",
                               style: TextStyle(
-                                  fontFamily: 'LexendDeca', fontSize: 15)),
+                                  fontFamily: 'LexendDeca', fontSize: 25)),
                           Text(
                             "Rp. 57.000",
                             style: TextStyle(
@@ -89,10 +87,10 @@ class _RewardState extends State<Reward> {
                                 fontSize: 15,
                                 fontWeight: FontWeight.w600),
                           ),
-                          Divider(height: 5),
+                          Divider(color: Colors.black,thickness: 4,),
                           Text("Poin Tersedia",
                               style: TextStyle(
-                                  fontFamily: 'LexendDeca', fontSize: 15)),
+                                  fontFamily: 'LexendDeca', fontSize: 25)),
                           Text(
                             "65",
                             style: TextStyle(
