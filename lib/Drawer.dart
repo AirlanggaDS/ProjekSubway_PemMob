@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:projek_kelompok/pages/AboutUs.dart';
 import 'package:projek_kelompok/pages/Login.dart';
 import 'package:projek_kelompok/pages/menu.dart';
 import 'package:projek_kelompok/pages/profil.dart';
@@ -86,7 +87,16 @@ class DrawerSide extends StatelessWidget {
                 },
               );
             },
-            )
+            ),
+            _drawerItem(
+            icon: Icons.attribution_outlined, 
+            text: 'About Us', 
+            onTap:(){
+                Navigator.push(context,
+                MaterialPageRoute(builder: (context)=>AboutUs())
+                );
+              }
+            ),
              
         ]
       ),
