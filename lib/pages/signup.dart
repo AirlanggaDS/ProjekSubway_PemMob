@@ -134,6 +134,7 @@ class _SignUpState extends State<SignUp> {
                 padding: const EdgeInsets.only(top: 5, left: 10 ),
                 child: Checkbox(
                   checkColor: Colors.white,
+                  activeColor: Colors.amber,
                   value: widget.checkedValue, onChanged: (value){
                   setState(() {
                     widget.checkedValue = !widget.checkedValue;

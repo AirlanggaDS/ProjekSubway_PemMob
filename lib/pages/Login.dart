@@ -101,7 +101,7 @@ class _LoginState extends State<Login> {
                     widget.checkedValue = !widget.checkedValue;
                   });
                   
-                }),
+                }, checkColor: Colors.white, activeColor: Colors.amber),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 5, left: 2),
