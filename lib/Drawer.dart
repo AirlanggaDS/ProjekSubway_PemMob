@@ -58,8 +58,8 @@ class DrawerSide extends StatelessWidget {
                 builder: (context){
                   return AlertDialog(
       backgroundColor: Color.fromARGB(255, 3, 178, 58),
-      title: Text("Logout",style: TextStyle(color: Colors.amber)),
-      content: Text("Apakah anda yakin ingin logout?",style: TextStyle(color: Colors.amber)) ,
+      title: Text("Logout",style: TextStyle(color: Colors.white)),
+      content: Text("Apakah anda yakin ingin logout?",style: TextStyle(color: Colors.white)) ,
       actions: [
         ElevatedButton(
           style: ElevatedButton.styleFrom(
@@ -71,7 +71,7 @@ class DrawerSide extends StatelessWidget {
             MaterialPageRoute(builder: (context)=> Login())
             );
           }, 
-          child: Text("Iya", style: TextStyle(color: Colors.amber),)),
+          child: Text("Iya", style: TextStyle(color: Colors.white),)),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.transparent,
@@ -80,7 +80,7 @@ class DrawerSide extends StatelessWidget {
             onPressed: (){
               Navigator.pop(context);
             }, 
-            child: Text("Tidak",style: TextStyle(color: Colors.amber)))
+            child: Text("Tidak",style: TextStyle(color: Colors.white)))
       ],
       
     );
