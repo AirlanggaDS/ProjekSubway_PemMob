@@ -1,3 +1,5 @@
+import 'dart:js_util';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -70,47 +72,98 @@ class _RewardState extends State<Reward> {
                   borderRadius: BorderRadius.circular(15),
                   color: Color.fromARGB(255,255,255,255)
                 ),
+                padding: EdgeInsets.all(50),
                 margin: EdgeInsets.only(top: 30),
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 5, left: 5),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Saldo",
+                              style: TextStyle(
+                                  fontFamily: 'LexendDeca', fontSize: 15)),
+                          Text(
+                            "Rp. 57.000",
+                            style: TextStyle(
+                                fontFamily: 'LexendDeca',
+                                fontSize: 15,
+                                fontWeight: FontWeight.w600),
+                          ),
+                          Divider(height: 5),
+                          Text("Poin Tersedia",
+                              style: TextStyle(
+                                  fontFamily: 'LexendDeca', fontSize: 15)),
+                          Text(
+                            "65",
+                            style: TextStyle(
+                                fontFamily: 'LexendDeca',
+                                fontSize: 15,
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ],
+                      ),
+                ),
 
             )
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                child: Text("PROMO HARI INI",
-                style: TextStyle(fontSize: 40,fontWeight:FontWeight.bold),),
-                margin: EdgeInsets.only(top: 50),
+          Container(
+            margin: EdgeInsets.only(top: 30),
+            decoration: BoxDecoration(borderRadius: BorderRadius.only(topLeft: Radius.circular(30),topRight: Radius.circular(30)),
+            color: Colors.white,),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  child: Text("PROMO HARI INI",
+                  style: TextStyle(fontSize: 30,fontWeight:FontWeight.bold),),
+                  margin: EdgeInsets.only(top: 50),
+                ),
+                Container(
+                  height: 180,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.transparent,
+                    image: DecorationImage(image: AssetImage("images/promo_1.png"),
+                    fit: BoxFit.fill)
+                  ),
+                  margin: EdgeInsets.only(top: 10,bottom: 10),
               ),
               Container(
-                height: 180,
-                width: 330,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Color.fromARGB(255, 3, 178, 58)
-                ),
-                margin: EdgeInsets.only(top: 10,bottom: 20),
-                child: Image.asset("/images/promo_1.png"),
+                  height: 180,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.transparent,
+                    image: DecorationImage(image: AssetImage("images/promo_2.png"),
+                    fit: BoxFit.fill)
+                  ),
+                  margin: EdgeInsets.only(top: 10,bottom: 10),
+              ),
+              Container(
+                  height: 180,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.transparent,
+                    image: DecorationImage(image: AssetImage("images/promo_1.png"),
+                    fit: BoxFit.fill)
+                  ),
+                  margin: EdgeInsets.only(top: 10,bottom: 10),
+              ),
+              Container(
+                  height: 180,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.transparent,
+                    image: DecorationImage(image: AssetImage("images/promo_2.png"),
+                    fit: BoxFit.fill)
+                  ),
+                  margin: EdgeInsets.only(top: 10,bottom: 10),
+              ),
+              ],
             ),
-            Container(
-                height: 180,
-                width: 330,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Color.fromARGB(255, 3, 178, 58)
-                ),
-                margin: EdgeInsets.only(top: 10,bottom: 20),
-            ),
-            Container(
-                height: 180,
-                width: 330,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: Color.fromARGB(255, 3, 178, 58)
-                ),
-                margin: EdgeInsets.only(top: 10,bottom: 20),
-            ),
-            ],
           )
             ],
           )
