@@ -50,7 +50,10 @@ class AboutUs extends StatelessWidget {
                 title: Text('Rayhan Azazaka Firdaus Muzakom',style: TextStyle(color: Colors.white),),
                 subtitle: Text('082111633059', style: TextStyle(color: Colors.white),),
               ),
-            )
+            ),
+            IconButton(onPressed: (){
+              Navigator.pop(context);
+            }, icon: Icon(Icons.arrow_back))
           ],
         ),
       ),

@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:projek_kelompok/pages/AboutUs.dart';
 import 'package:projek_kelompok/pages/Login.dart';
+import 'package:projek_kelompok/pages/location.dart';
 import 'package:projek_kelompok/pages/menu.dart';
 import 'package:projek_kelompok/pages/profil.dart';
 import 'package:projek_kelompok/pages/reward.dart';
@@ -46,6 +47,14 @@ class DrawerSide extends StatelessWidget {
                 );
               }
             ),
+          _drawerItem(
+            icon: Icons.location_city, 
+            text: 'Location', 
+            onTap: (){
+              Navigator.push(context, 
+              MaterialPageRoute(builder: (context)=>Location())
+            );
+          }),
           Divider(height: 25,thickness: 1,),
           Padding(padding: EdgeInsets.only(left: 20.0, bottom: 10)),
           _drawerItem(
