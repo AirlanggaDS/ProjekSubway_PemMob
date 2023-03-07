@@ -109,7 +109,7 @@ class _BreakfastState extends State<Breakfast> {
               child: (ListView(
                 children: [
                   Container(
-                      height: 510,
+                      height: 550,
                       margin: EdgeInsets.only(top: 30),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
