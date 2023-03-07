@@ -97,15 +97,21 @@ class HomeScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Saldo",
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5),
+                            child: Text("Saldo",
+                                style: TextStyle(
+                                    fontFamily: 'LexendDeca', fontSize: 15)),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5),
+                            child: Text(
+                              "Rp. 57.000",
                               style: TextStyle(
-                                  fontFamily: 'LexendDeca', fontSize: 15)),
-                          Text(
-                            "Rp. 57.000",
-                            style: TextStyle(
-                                fontFamily: 'LexendDeca',
-                                fontSize: 15,
-                                fontWeight: FontWeight.w600),
+                                  fontFamily: 'LexendDeca',
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600),
+                            ),
                           ),
                         ],
                       ),
@@ -125,17 +131,23 @@ class HomeScreen extends StatelessWidget {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text("Point Tersedia",
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5),
+                            child: Text("Point Tersedia",
+                                style: TextStyle(
+                                  fontFamily: 'LexendDeca',
+                                  fontSize: 15,
+                                )),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 5),
+                            child: Text(
+                              "65",
                               style: TextStyle(
-                                fontFamily: 'LexendDeca',
-                                fontSize: 15,
-                              )),
-                          Text(
-                            "65",
-                            style: TextStyle(
-                                fontFamily: 'LexendDeca',
-                                fontSize: 15,
-                                fontWeight: FontWeight.w600),
+                                  fontFamily: 'LexendDeca',
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w600),
+                            ),
                           ),
                         ],
                       ),

@@ -20,7 +20,7 @@ class Profile extends StatelessWidget{
                 height: 87,
                 width: 99,
                 decoration: BoxDecoration(
-                  color: Colors.grey,
+                  color: Color.fromARGB(255, 212, 212, 212),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: 
@@ -31,7 +31,7 @@ class Profile extends StatelessWidget{
                 width: 365,
                 height: 150,
                 decoration: const BoxDecoration(
-                  color: Colors.grey,
+                  color: Color.fromARGB(255, 212, 212, 212),
                   borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
                 ),
                 child: 
@@ -39,7 +39,7 @@ class Profile extends StatelessWidget{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Padding(
-                      padding: EdgeInsets.only(left: 30, top: 10),
+                      padding: EdgeInsets.only(left: 30, top: 30),
                       child: Text("Saldo", style: TextStyle(
                         fontFamily: 'LexendDeca',
                         fontSize: 30,
@@ -70,7 +70,7 @@ class Profile extends StatelessWidget{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: const [
                     Padding(
-                      padding: EdgeInsets.only(left: 30),
+                      padding: EdgeInsets.only(left: 30, top: 20),
                       child: 
                       Text("Point Tersedia ", style: TextStyle(
                         fontFamily: 'LexendDeca',
@@ -79,7 +79,7 @@ class Profile extends StatelessWidget{
                       ),),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(left: 30, top: 20),
+                      padding: EdgeInsets.only(left: 30, top: 5),
                       child: 
                       Text("65 ", style: TextStyle(
                         fontFamily: 'LexendDeca',
@@ -96,7 +96,7 @@ class Profile extends StatelessWidget{
                 width: 365,
                 height: 100,
                 decoration: BoxDecoration(
-                  color: Colors.grey,
+                  color: Color.fromARGB(255, 212, 212, 212),
                   borderRadius: BorderRadius.circular(10),
                 ), 
              ),
@@ -105,7 +105,7 @@ class Profile extends StatelessWidget{
                 width: 365,
                 height: 100,
                 decoration: BoxDecoration(
-                  color: Colors.grey,
+                  color: Color.fromARGB(255, 212, 212, 212),
                   borderRadius: BorderRadius.circular(10),
                 ), 
              ),
@@ -114,7 +114,7 @@ class Profile extends StatelessWidget{
                 width: 365,
                 height: 100,
                 decoration: BoxDecoration(
-                  color: Colors.grey,
+                  color: Color.fromARGB(255, 212, 212, 212),
                   borderRadius: BorderRadius.circular(10),
                 ), 
              ),
