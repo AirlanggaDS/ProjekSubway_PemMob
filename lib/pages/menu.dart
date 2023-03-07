@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projek_kelompok/pages/Menu%20Pages/Sandwiches.dart';
 import 'package:projek_kelompok/pages/Menu%20Pages/Breakfast.dart';
+import 'package:projek_kelompok/pages/Menu%20Pages/Wraps.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -130,10 +131,15 @@ class Menu extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      LeftKategoriMenu(
+                      InkWell(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Wraps())),
+                        child: LeftKategoriMenu(
                         imgMenu: "images/kategori menu/wraps.png",
                         titleMenu: "Wraps",
-                      ),
+                      )),
                       RightKategoriMenu(
                         imgMenu: "images/kategori menu/salads.png",
                         titleMenu: "Salads",

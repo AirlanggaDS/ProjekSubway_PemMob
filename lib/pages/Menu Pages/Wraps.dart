@@ -109,7 +109,7 @@ class _WrapsState extends State<Wraps> {
               child: (ListView(
                 children: [
                   Container(
-                      height: 1550,
+                      height: 950,
                       margin: EdgeInsets.only(top: 30),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
