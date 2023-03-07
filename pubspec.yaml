@@ -63,6 +63,7 @@ flutter:
   assets:
     - images/
     - images/all sandwiches/
+    - images/breakfast/
     - images/kategori menu/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg

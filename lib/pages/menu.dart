@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projek_kelompok/pages/Menu%20Pages/Sandwiches.dart';
+import 'package:projek_kelompok/pages/Menu%20Pages/Breakfast.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -105,18 +106,24 @@ class Menu extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      InkWell(onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Sandwiches())),
-                    child: LeftKategoriMenu(
-                        imgMenu: "images/kategori menu/all sandwiches.png",
-                        titleMenu: "All Sandwiches",
-                    )
-                      ),
-                      
-                      RightKategoriMenu(
-                        imgMenu: "images/kategori menu/breakfast.png",
-                        titleMenu: "Breakfast",
-                        
+                      InkWell(
+                          onTap: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Sandwiches())),
+                          child: LeftKategoriMenu(
+                            imgMenu: "images/kategori menu/all sandwiches.png",
+                            titleMenu: "All Sandwiches",
+                          )),
+                      InkWell(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => Breakfast())),
+                        child: RightKategoriMenu(
+                          imgMenu: "images/kategori menu/breakfast.png",
+                          titleMenu: "Breakfast",
+                        ),
                       ),
                     ],
                   ),
@@ -158,63 +165,61 @@ class RightKategoriMenu extends StatelessWidget {
   final String imgMenu;
   final String titleMenu;
 
-  const RightKategoriMenu({ required this.titleMenu,required this.imgMenu});
+  const RightKategoriMenu({required this.titleMenu, required this.imgMenu});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 5),
-              child: Container(
-                  margin: EdgeInsets.only(top: 30),
-                  width: 160,
-                  height: 160,
-                  decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: FittedBox(
-                    child: Image.asset(
-                      imgMenu,
-                      fit: BoxFit.fill,
-                    ),
-                  )),
-            ),
-            Container(
-              margin: const EdgeInsets.only(
-                  top: 5, right: 32, bottom: 80),
-              alignment: FractionalOffset.topCenter,
-              height: 35,
-              width: 160,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius:
-                    BorderRadius.all(Radius.circular(10)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 5,
-                    blurRadius: 7,
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: Text(
-                titleMenu,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  height: 1.6,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(right: 5),
+            child: Container(
+                margin: EdgeInsets.only(top: 30),
+                width: 160,
+                height: 160,
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(10),
                 ),
+                child: FittedBox(
+                  child: Image.asset(
+                    imgMenu,
+                    fit: BoxFit.fill,
+                  ),
+                )),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 5, right: 32, bottom: 80),
+            alignment: FractionalOffset.topCenter,
+            height: 35,
+            width: 160,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: Offset(0, 3),
+                ),
+              ],
+            ),
+            child: Text(
+              titleMenu,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                height: 1.6,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          ],
-        ),
-      );
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -222,63 +227,60 @@ class LeftKategoriMenu extends StatelessWidget {
   final String imgMenu;
   final String titleMenu;
 
-  const LeftKategoriMenu({ required this.titleMenu,required this.imgMenu});
+  const LeftKategoriMenu({required this.titleMenu, required this.imgMenu});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 30),
-              child: Container(
-                  margin: EdgeInsets.only(top: 30),
-                  width: 160,
-                  height: 160,
-                  decoration: BoxDecoration(
-                    color: Colors.transparent,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: FittedBox(
-                    child: Image.asset(
-                      imgMenu,
-                      fit: BoxFit.fill,
-                    ),
-                  )),
-            ),
-            Container(
-              margin: const EdgeInsets.only(
-                  top: 5, left: 35, bottom: 80),
-              alignment: FractionalOffset.topCenter,
-              height: 35,
-              width: 160,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius:
-                    BorderRadius.all(Radius.circular(10)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 5,
-                    blurRadius: 7,
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: Text(
-                titleMenu,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  height: 1.6,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 30),
+            child: Container(
+                margin: EdgeInsets.only(top: 30),
+                width: 160,
+                height: 160,
+                decoration: BoxDecoration(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.circular(10),
                 ),
+                child: FittedBox(
+                  child: Image.asset(
+                    imgMenu,
+                    fit: BoxFit.fill,
+                  ),
+                )),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 5, left: 35, bottom: 80),
+            alignment: FractionalOffset.topCenter,
+            height: 35,
+            width: 160,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: Offset(0, 3),
+                ),
+              ],
+            ),
+            child: Text(
+              titleMenu,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                height: 1.6,
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
               ),
             ),
-          ],
-        ),
-      );
- 
+          ),
+        ],
+      ),
+    );
   }
 }

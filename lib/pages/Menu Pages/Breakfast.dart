@@ -3,14 +3,14 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:projek_kelompok/pages/menu.dart';
 
-class Sandwiches extends StatefulWidget {
-  const Sandwiches({super.key});
+class Breakfast extends StatefulWidget {
+  const Breakfast({super.key});
 
   @override
-  State<Sandwiches> createState() => _SandwichesState();
+  State<Breakfast> createState() => _BreakfastState();
 }
 
-class _SandwichesState extends State<Sandwiches> {
+class _BreakfastState extends State<Breakfast> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -109,7 +109,7 @@ class _SandwichesState extends State<Sandwiches> {
               child: (ListView(
                 children: [
                   Container(
-                      height: 1550,
+                      height: 510,
                       margin: EdgeInsets.only(top: 30),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -137,7 +137,7 @@ class _SandwichesState extends State<Sandwiches> {
                                 ),
                                 Container(
                                   child: Text(
-                                    "All Sandwiches",
+                                    "Breakfast",
                                     style: TextStyle(
                                         fontSize: 30,
                                         fontWeight: FontWeight.bold),
@@ -152,13 +152,13 @@ class _SandwichesState extends State<Sandwiches> {
                               children: [
                                 LeftMenu(
                                   imgMenu:
-                                      "images/all sandwiches/chicken-teriyaki-front-e1633678475910-680x680.png",
-                                  titleMenu: "Chicken Teriyaki",
+                                      "images/breakfast/Breakfast-Strip-Egg-680x680.png",
+                                  titleMenu: "Strip & Egg",
                                 ),
                                 RightMenu(
                                   imgMenu:
-                                      "images/all sandwiches/egg-mayo-680x680.png",
-                                  titleMenu: "Egg Mayo",
+                                      "images/breakfast/Cheese-Egg-680x680.png",
+                                  titleMenu: "Cheese Egg",
                                 ),
                               ],
                             ),
@@ -167,83 +167,13 @@ class _SandwichesState extends State<Sandwiches> {
                               children: [
                                 LeftMenu(
                                   imgMenu:
-                                      "images/all sandwiches/ham-front-680x680.png",
-                                  titleMenu: "Chicken Slice",
+                                      "images/breakfast/Chicken-Ham-Egg-680x680.png",
+                                  titleMenu: "Chicken Ham Egg",
                                 ),
                                 RightMenu(
                                   imgMenu:
-                                      "images/all sandwiches/Italian-BMT-Front-680x680.png",
-                                  titleMenu: "Italian B.M.T",
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                LeftMenu(
-                                  imgMenu:
-                                      "images/all sandwiches/Meatball-Marinara-2.png",
-                                  titleMenu: "Meatball Marinara",
-                                ),
-                                RightMenu(
-                                  imgMenu:
-                                      "images/all sandwiches/Roast-Beef.png",
-                                  titleMenu: "Roast Beef",
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                LeftMenu(
-                                  imgMenu:
-                                      "images/all sandwiches/roast-chicken-front-680x680.png",
-                                  titleMenu: "Roast Chicken",
-                                ),
-                                RightMenu(
-                                  imgMenu:
-                                      "images/all sandwiches/Shrimp-Avocado-1.png",
-                                  titleMenu: "Shrimp Avocado",
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                LeftMenu(
-                                  imgMenu:
-                                      "images/all sandwiches/spicy-italian-front-680x680.png",
-                                  titleMenu: "Spicy Italian",
-                                ),
-                                RightMenu(
-                                  imgMenu:
-                                      "images/all sandwiches/steak_cheese-front-680x680.png",
-                                  titleMenu: "Steak Cheese",
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                LeftMenu(
-                                  imgMenu:
-                                      "images/all sandwiches/bbq chicken.png",
-                                  titleMenu: "BBQ Chicken",
-                                ),
-                                RightMenu(
-                                  imgMenu:
-                                      "images/all sandwiches/tuna-front-680x680.png",
-                                  titleMenu: "Tuna Mayo",
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                LeftMenu(
-                                  imgMenu:
-                                      "images/all sandwiches/veggie-1-680x680.png",
-                                  titleMenu: "Veggie Delite",
+                                      "images/breakfast/Tuna-Egg-680x680.png",
+                                  titleMenu: "Tuna Egg",
                                 ),
                               ],
                             ),
