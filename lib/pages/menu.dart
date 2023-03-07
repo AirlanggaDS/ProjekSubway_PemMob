@@ -131,8 +131,8 @@ class Menu extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       LeftKategoriMenu(
-                        imgMenu: "images/kategori menu/warp.png",
-                        titleMenu: "Warp",
+                        imgMenu: "images/kategori menu/wraps.png",
+                        titleMenu: "Wraps",
                       ),
                       RightKategoriMenu(
                         imgMenu: "images/kategori menu/salads.png",
