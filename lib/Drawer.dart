@@ -124,18 +124,6 @@ Widget _drawerHeader(){
         image: AssetImage('images/rayhan.jpg'),
         fit: BoxFit.fill,),
     ),
-    otherAccountsPictures: [
-      ClipOval(
-        child: Image(
-        image: AssetImage('images/rayhan.jpg'),
-        fit: BoxFit.cover),
-        ),
-        ClipOval(
-          child: Image(
-          image: AssetImage('images/rayhan.jpg'),
-          fit: BoxFit.cover),
-          )
-    ],
     accountName: Text('User'),
     accountEmail: Text('user@gmail.com'),
     decoration: BoxDecoration(color: Color.fromARGB(255, 3, 178, 58)),

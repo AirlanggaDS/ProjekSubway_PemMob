@@ -157,6 +157,33 @@ class _SignUpState extends State<SignUp> {
                   if (widget.checkedValue == true) {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => const Create()));
                   }
+                  else{
+                    showDialog(
+                context: context, 
+                builder: (context){
+                  return AlertDialog(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10)
+                    ),
+      backgroundColor: Colors.amber,
+      title: Text("Alert",style: TextStyle(color: Colors.white)),
+      content: Text("Please Accept with Policy and Privacy",style: TextStyle(color: Colors.white)) ,
+      actions: [
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+              elevation: 0,
+            ),
+            onPressed: (){
+              Navigator.pop(context);
+            }, 
+            child: Text("Ok",style: TextStyle(color: Colors.black)))
+      ],
+      
+    );
+                },
+              );
+                  }
                 },
                 child: Ink(
                   padding: const EdgeInsets.symmetric(vertical: 12,),
