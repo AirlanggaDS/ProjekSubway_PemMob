@@ -104,34 +104,37 @@ class LocationContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 300,
-      height: 100,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20)
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Text(Kota, 
-            style: TextStyle(
-              color: Colors.black,
-              fontWeight: FontWeight.bold,
-              fontSize: 40,
-            )),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Text(Alamat,
-            style: TextStyle(
-              color: Colors.black,
-              
-            ),),
-          )
-        ],
+    return Padding(
+      padding: const EdgeInsets.only(left: 20, right: 20),
+      child: Container(
+        width: 300,
+        height: 100,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(20)
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Text(Kota, 
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 40,
+              )),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Text(Alamat,
+              style: TextStyle(
+                color: Colors.black,
+                
+              ),),
+            )
+          ],
+        ),
       ),
     );
   }
