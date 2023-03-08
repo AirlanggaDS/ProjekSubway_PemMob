@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:projek_kelompok/Navbar.dart';
-import 'package:projek_kelompok/pages/home.dart';
-import 'package:projek_kelompok/pages/signup.dart';
+import 'package:Subway/Navbar.dart';
+import 'package:Subway/pages/home.dart';
+import 'package:Subway/pages/signup.dart';
 
 
 class Login extends StatefulWidget {

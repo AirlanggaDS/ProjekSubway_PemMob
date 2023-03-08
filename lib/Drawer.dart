@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:projek_kelompok/pages/AboutUs.dart';
-import 'package:projek_kelompok/pages/Login.dart';
-import 'package:projek_kelompok/pages/location.dart';
-import 'package:projek_kelompok/pages/menu.dart';
-import 'package:projek_kelompok/pages/profil.dart';
-import 'package:projek_kelompok/pages/reward.dart';
+import 'package:Subway/pages/AboutUs.dart';
+import 'package:Subway/pages/Login.dart';
+import 'package:Subway/pages/location.dart';
+import 'package:Subway/pages/menu.dart';
+import 'package:Subway/pages/profil.dart';
+import 'package:Subway/pages/reward.dart';
 
 class DrawerSide extends StatelessWidget {
   const DrawerSide({super.key});

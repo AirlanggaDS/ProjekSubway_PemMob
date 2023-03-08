@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:projek_kelompok/pages/Menu%20Pages/Sandwiches.dart';
-import 'package:projek_kelompok/pages/Menu%20Pages/Breakfast.dart';
-import 'package:projek_kelompok/pages/Menu%20Pages/Wraps.dart';
-import 'package:projek_kelompok/pages/Menu%20Pages/Salads.dart';
-import 'package:projek_kelompok/pages/Menu%20Pages/Sides.dart';
-import 'package:projek_kelompok/pages/Menu%20Pages/Drinks.dart';
+import 'package:Subway/pages/Menu%20Pages/Sandwiches.dart';
+import 'package:Subway/pages/Menu%20Pages/Breakfast.dart';
+import 'package:Subway/pages/Menu%20Pages/Wraps.dart';
+import 'package:Subway/pages/Menu%20Pages/Salads.dart';
+import 'package:Subway/pages/Menu%20Pages/Sides.dart';
+import 'package:Subway/pages/Menu%20Pages/Drinks.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
