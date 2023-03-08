@@ -3,14 +3,14 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:projek_kelompok/pages/menu.dart';
 
-class Wraps extends StatefulWidget {
-  const Wraps({super.key});
+class Sides extends StatefulWidget {
+  const Sides({super.key});
 
   @override
-  State<Wraps> createState() => _WrapsState();
+  State<Sides> createState() => _SidesState();
 }
 
-class _WrapsState extends State<Wraps> {
+class _SidesState extends State<Sides> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -137,7 +137,7 @@ class _WrapsState extends State<Wraps> {
                                 ),
                                 Container(
                                   child: Text(
-                                    "Wraps",
+                                    "Sides",
                                     style: TextStyle(
                                         fontSize: 30,
                                         fontWeight: FontWeight.bold),
@@ -152,13 +152,13 @@ class _WrapsState extends State<Wraps> {
                               children: [
                                 LeftMenu(
                                   imgMenu:
-                                      "images/wraps/BBQ_Chicken_wrap_594x334.jpg",
-                                  titleMenu: "BBQ Chicken",
+                                      "images/sides/RPLC-chocolatechipcookie_PR_PR-1-680x680.png",
+                                  titleMenu: "Chocolate Chip Cookie",
                                 ),
                                 RightMenu(
                                   imgMenu:
-                                      "images/wraps/Chicken_Strip_Wrap_594x334.jpg",
-                                  titleMenu: "Chicken Slice",
+                                      "images/sides/RPLC-doublechocolatechipcookie-1-680x680.png",
+                                  titleMenu: "Double Chocolate Chip Cookie",
                                 ),
                               ],
                             ),
@@ -167,13 +167,13 @@ class _WrapsState extends State<Wraps> {
                               children: [
                                 LeftMenu(
                                   imgMenu:
-                                      "images/wraps/Chicken_Teriyaki_Wrap_594x334.jpg",
-                                  titleMenu: "Chicken Teriyaki",
+                                      "images/sides/RPLC-whitechipmacadamianutcookie-1-680x680.png",
+                                  titleMenu: "Madamia Nut Cookie",
                                 ),
                                 RightMenu(
                                   imgMenu:
-                                      "images/wraps/Italian_BMT_Wrap_594x334.png",
-                                  titleMenu: "Italian B.M.T",
+                                      "images/sides/png-transparent-oatmeal-raisin-cookies-chocolate-chip-cookie-peanut-butter-cookie-schmackary-s-baking-biscuit-680x680.png",
+                                  titleMenu: "Oatmeal Raisin Cookie",
                                 ),
                               ],
                             ),
@@ -182,13 +182,13 @@ class _WrapsState extends State<Wraps> {
                               children: [
                                 LeftMenu(
                                   imgMenu:
-                                      "images/wraps/Chicken_Strip_Wrap_594x334.jpg",
-                                  titleMenu: "Roast Chicken",
+                                      "images/sides/Chicken-Ham-_-Cheese-Toastie-680x680.png",
+                                  titleMenu: "Chicken Ham Cheese Toastie",
                                 ),
                                 RightMenu(
                                   imgMenu:
-                                      "images/wraps/Italian_BMT_Wrap_594x334.png",
-                                  titleMenu: "Spicy Italian",
+                                      "images/sides/Egg-Mayo-Toastie-680x680.png",
+                                  titleMenu: "Egg Mayo Toastie",
                                 ),
                               ],
                             ),
@@ -197,17 +197,27 @@ class _WrapsState extends State<Wraps> {
                               children: [
                                 LeftMenu(
                                   imgMenu:
-                                      "images/wraps/Steak__Cheese_Wrap_594x334.jpg",
-                                  titleMenu: "Steak & Cheese",
+                                      "images/sides/SeekPng.com_pringles-png_2905473-680x680.png",
+                                  titleMenu: "Pringles Original",
                                 ),
                                 RightMenu(
                                   imgMenu:
-                                      "images/wraps/Tuna_Mayo_Wrap_594x334.jpg",
-                                  titleMenu: "Tuna Mayo",
+                                      "images/sides/SeekPng.com_pringles-png_9159532-680x680.png",
+                                  titleMenu: "Pringles Sour Cream",
                                 ),
                               ],
                             ),
-                            
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                LeftMenu(
+                                  imgMenu:
+                                      "images/sides/mushroom-soup-680x680.png",
+                                  titleMenu: "Mushroom Soup",
+                                ),
+                                
+                              ],
+                            ),
                           ]))
                 ],
               )),

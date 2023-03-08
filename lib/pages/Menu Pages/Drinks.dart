@@ -3,14 +3,14 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:projek_kelompok/pages/menu.dart';
 
-class Wraps extends StatefulWidget {
-  const Wraps({super.key});
+class Drinks extends StatefulWidget {
+  const Drinks({super.key});
 
   @override
-  State<Wraps> createState() => _WrapsState();
+  State<Drinks> createState() => _DrinksState();
 }
 
-class _WrapsState extends State<Wraps> {
+class _DrinksState extends State<Drinks> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -137,7 +137,7 @@ class _WrapsState extends State<Wraps> {
                                 ),
                                 Container(
                                   child: Text(
-                                    "Wraps",
+                                    "Drinks",
                                     style: TextStyle(
                                         fontSize: 30,
                                         fontWeight: FontWeight.bold),
@@ -152,13 +152,13 @@ class _WrapsState extends State<Wraps> {
                               children: [
                                 LeftMenu(
                                   imgMenu:
-                                      "images/wraps/BBQ_Chicken_wrap_594x334.jpg",
-                                  titleMenu: "BBQ Chicken",
+                                      "images/drinks/Aqua-300ml-680x680.png",
+                                  titleMenu: "Aqua",
                                 ),
                                 RightMenu(
                                   imgMenu:
-                                      "images/wraps/Chicken_Strip_Wrap_594x334.jpg",
-                                  titleMenu: "Chicken Slice",
+                                      "images/drinks/carbonated-drinks-680x680.png",
+                                  titleMenu: "Carbonated Drinks",
                                 ),
                               ],
                             ),
@@ -167,43 +167,13 @@ class _WrapsState extends State<Wraps> {
                               children: [
                                 LeftMenu(
                                   imgMenu:
-                                      "images/wraps/Chicken_Teriyaki_Wrap_594x334.jpg",
-                                  titleMenu: "Chicken Teriyaki",
+                                      "images/drinks/coffee-1-680x680.png",
+                                  titleMenu: "Coffe",
                                 ),
                                 RightMenu(
                                   imgMenu:
-                                      "images/wraps/Italian_BMT_Wrap_594x334.png",
-                                  titleMenu: "Italian B.M.T",
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                LeftMenu(
-                                  imgMenu:
-                                      "images/wraps/Chicken_Strip_Wrap_594x334.jpg",
-                                  titleMenu: "Roast Chicken",
-                                ),
-                                RightMenu(
-                                  imgMenu:
-                                      "images/wraps/Italian_BMT_Wrap_594x334.png",
-                                  titleMenu: "Spicy Italian",
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                LeftMenu(
-                                  imgMenu:
-                                      "images/wraps/Steak__Cheese_Wrap_594x334.jpg",
-                                  titleMenu: "Steak & Cheese",
-                                ),
-                                RightMenu(
-                                  imgMenu:
-                                      "images/wraps/Tuna_Mayo_Wrap_594x334.jpg",
-                                  titleMenu: "Tuna Mayo",
+                                      "images/drinks/minutemadepulpyorange-680x680.png",
+                                  titleMenu: "Minute Maid Pulpy",
                                 ),
                               ],
                             ),

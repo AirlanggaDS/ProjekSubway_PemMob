@@ -3,14 +3,14 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:projek_kelompok/pages/menu.dart';
 
-class Wraps extends StatefulWidget {
-  const Wraps({super.key});
+class Salads extends StatefulWidget {
+  const Salads({super.key});
 
   @override
-  State<Wraps> createState() => _WrapsState();
+  State<Salads> createState() => _SaladsState();
 }
 
-class _WrapsState extends State<Wraps> {
+class _SaladsState extends State<Salads> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -137,7 +137,7 @@ class _WrapsState extends State<Wraps> {
                                 ),
                                 Container(
                                   child: Text(
-                                    "Wraps",
+                                    "Salads",
                                     style: TextStyle(
                                         fontSize: 30,
                                         fontWeight: FontWeight.bold),
@@ -152,12 +152,12 @@ class _WrapsState extends State<Wraps> {
                               children: [
                                 LeftMenu(
                                   imgMenu:
-                                      "images/wraps/BBQ_Chicken_wrap_594x334.jpg",
+                                      "images/salads/Buffalo_Chicken_Salad_JPEG_594x334.jpg",
                                   titleMenu: "BBQ Chicken",
                                 ),
                                 RightMenu(
                                   imgMenu:
-                                      "images/wraps/Chicken_Strip_Wrap_594x334.jpg",
+                                      "images/salads/Chicken_Roasted_Salad_594x334.jpg",
                                   titleMenu: "Chicken Slice",
                                 ),
                               ],
@@ -167,43 +167,43 @@ class _WrapsState extends State<Wraps> {
                               children: [
                                 LeftMenu(
                                   imgMenu:
-                                      "images/wraps/Chicken_Teriyaki_Wrap_594x334.jpg",
+                                      "images/salads/Chicken_Teriyaki_salad_594x334.jpg",
                                   titleMenu: "Chicken Teriyaki",
                                 ),
                                 RightMenu(
                                   imgMenu:
-                                      "images/wraps/Italian_BMT_Wrap_594x334.png",
-                                  titleMenu: "Italian B.M.T",
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                LeftMenu(
-                                  imgMenu:
-                                      "images/wraps/Chicken_Strip_Wrap_594x334.jpg",
-                                  titleMenu: "Roast Chicken",
-                                ),
-                                RightMenu(
-                                  imgMenu:
-                                      "images/wraps/Italian_BMT_Wrap_594x334.png",
-                                  titleMenu: "Spicy Italian",
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                LeftMenu(
-                                  imgMenu:
-                                      "images/wraps/Steak__Cheese_Wrap_594x334.jpg",
+                                      "images/salads/Chipotle_Steak_Melt_Salads_594x334.jpg",
                                   titleMenu: "Steak & Cheese",
                                 ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                LeftMenu(
+                                  imgMenu:
+                                      "images/salads/Italian_BMT_Salad_594x334.jpg",
+                                  titleMenu: "Italian B.M.T",
+                                ),
                                 RightMenu(
                                   imgMenu:
-                                      "images/wraps/Tuna_Mayo_Wrap_594x334.jpg",
+                                      "images/salads/Tuna_Mayo_Salad_594x334.jpg",
                                   titleMenu: "Tuna Mayo",
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                LeftMenu(
+                                  imgMenu:
+                                      "images/salads/Chicken_Roasted_Salad_594x334.jpg",
+                                  titleMenu: "Roasted Chicken",
+                                ),
+                                RightMenu(
+                                  imgMenu:
+                                      "images/salads/Italian_BMT_Salad_594x334.jpg",
+                                  titleMenu: "Spicy Italian",
                                 ),
                               ],
                             ),
