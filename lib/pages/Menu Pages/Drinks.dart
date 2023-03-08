@@ -215,7 +215,7 @@ class RightMenu extends StatelessWidget {
           ),
           Center(
             child: Container(
-              margin: const EdgeInsets.only(left: 15),
+              margin: const EdgeInsets.only(left: 15, top: 10),
               alignment: FractionalOffset.topCenter,
               height: 35,
               width: 160,
@@ -278,7 +278,7 @@ class LeftMenu extends StatelessWidget {
           ),
           Center(
             child: Container(
-              margin: const EdgeInsets.only(left: 25),
+              margin: const EdgeInsets.only(left: 25, top: 10),
               alignment: FractionalOffset.topCenter,
               height: 35,
               width: 160,
