@@ -109,7 +109,7 @@ class _SidesState extends State<Sides> {
               child: (ListView(
                 children: [
                   Container(
-                      height: 950,
+                      height: 1150,
                       margin: EdgeInsets.only(top: 30),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(

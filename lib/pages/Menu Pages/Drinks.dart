@@ -109,7 +109,7 @@ class _DrinksState extends State<Drinks> {
               child: (ListView(
                 children: [
                   Container(
-                      height: 950,
+                      height: 550,
                       margin: EdgeInsets.only(top: 30),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
