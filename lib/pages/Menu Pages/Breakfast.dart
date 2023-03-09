@@ -109,7 +109,7 @@ class _BreakfastState extends State<Breakfast> {
               child: (ListView(
                 children: [
                   Container(
-                      height: 550,
+                      height: 650,
                       margin: EdgeInsets.only(top: 30),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
@@ -136,6 +136,7 @@ class _BreakfastState extends State<Breakfast> {
                                   ),
                                 ),
                                 Container(
+                                 
                                   child: Text(
                                     "Breakfast",
                                     style: TextStyle(
@@ -143,7 +144,7 @@ class _BreakfastState extends State<Breakfast> {
                                         fontWeight: FontWeight.bold),
                                   ),
                                   margin: EdgeInsets.only(top: 15),
-                                  padding: EdgeInsets.only(left: 50),
+                                  padding: EdgeInsets.only(left: 100),
                                 ),
                               ],
                             ),
