@@ -5,39 +5,43 @@ import 'profil.dart';
 import 'menu.dart';
 import 'Login.dart';
 
-
 class HomeScreen extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
-    return Scaffold( 
+    return Scaffold(
       backgroundColor: Colors.amber,
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 3, 178, 58),
-        title:
-        
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Container(
-            child: Image.asset(
-              "images/logo1.png",
-              width: 30,
-              height: 30,
+        toolbarHeight: 80,
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: Image.asset(
+                "images/logo1.png",
+                width: 50,
+                height: 50,
+                
+              ),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              tooltip: MaterialLocalizations.of(context).openAppDrawerTooltip,
+            );
+          },
+        ),
+        title: Align(
+          alignment: Alignment.centerRight,
+          child: Text(
+            "Hello User",
+            style: TextStyle(
+              color: Colors.white,
+              fontFamily: 'LexendDeca',
+              fontSize: 30,
+              fontWeight:FontWeight.bold
             ),
           ),
-          Row(children: [
-            Container(
-              child: const Text(
-                "Hello User",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontFamily: 'LexendDeca',
-                  fontSize: 30,
-                ),
-              ),
-            ),
-          ])
-        ]),
+        ),
       ),
       drawer: DrawerSide(),
       body: ListView(
