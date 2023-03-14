@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:Subway/pages/home.dart';
-import 'package:Subway/pages/menu.dart';
-import 'package:Subway/pages/reward.dart';
+import 'package:subway/pages/home.dart';
+import 'package:subway/pages/menu.dart';
+import 'package:subway/pages/reward.dart';
 // import 'home.dart';
 
 

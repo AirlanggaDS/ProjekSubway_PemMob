@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:Subway/Drawer.dart';
-import 'package:Subway/pages/signup.dart';
+import 'package:subway/Drawer.dart';
+import 'package:subway/pages/signup.dart';
 import 'profil.dart';
 import 'menu.dart';
 import 'Login.dart';

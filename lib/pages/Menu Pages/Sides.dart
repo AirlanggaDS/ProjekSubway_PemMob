@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/container.dart';
-import 'package:Subway/pages/menu.dart';
+import 'package:subway/pages/menu.dart';
 
 class Sides extends StatefulWidget {
   const Sides({super.key});
