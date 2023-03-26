@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "projek_kelompok",
+            "name": "subway",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "projek_kelompok (profile mode)",
+            "name": "subway (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "projek_kelompok (release mode)",
+            "name": "subway (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
