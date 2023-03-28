@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-class Product{
+class Product with ChangeNotifier{
+  @required String id;
   @required String ImgMenu;
   @required String NamaMenu;
-  @required String PriceMenu;
-  Product(this.ImgMenu, this.NamaMenu, this.PriceMenu);
+  @required double PriceMenu;
+  Product(this.id,this.ImgMenu, this.NamaMenu, this.PriceMenu);
 
 }

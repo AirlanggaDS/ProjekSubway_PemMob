@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:provider/provider.dart';
 import '../../providers/breakfast_product.dart';
 import '../../widgets/MenuGrid.dart';
+import 'package:subway/pages/cart_screen.dart';
 
 class Breakfast extends StatelessWidget {
   @override
@@ -127,7 +128,8 @@ class Breakfast extends StatelessWidget {
                   child: Container(
                     child: Text(
                       "Breakfast",
-                      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                     ),
                     margin: EdgeInsets.only(top: 50),
                   ),
@@ -135,12 +137,21 @@ class Breakfast extends StatelessWidget {
               ],
             )),
             floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Add your onPressed code here!
-        },
-        label: const Text('Cart',style: TextStyle(color: Color.fromARGB(255, 3, 178, 58)),),
-        icon: const Icon(Icons.shopping_cart, color: Color.fromARGB(255, 3, 178, 58),),
-        backgroundColor: Colors.white,)),
+              onPressed: 
+                 () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ScreenCart())),
+              
+              label: const Text(
+                'Cart',
+                style: TextStyle(color: Color.fromARGB(255, 3, 178, 58)),
+              ),
+              icon: const Icon(
+                Icons.shopping_cart,
+                color: Color.fromARGB(255, 3, 178, 58),
+              ),
+              backgroundColor: Colors.white,
+            ),
+            ),
       ),
     );
   }

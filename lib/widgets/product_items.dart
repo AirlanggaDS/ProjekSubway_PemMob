@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:subway/widgets/BottomBar.dart';
+import '../models/product.dart';
 
 class ProductItems extends StatelessWidget {
-  final String thumbnail;
-  final String nama;
-  final String harga;
-  ProductItems(this.thumbnail, this.nama, this.harga);
+
 
   @override
   Widget build(BuildContext context) {
+    final Menudata =Provider.of<Product>(context);
     return 
     GridTile(
       child: GestureDetector(
@@ -18,7 +18,7 @@ class ProductItems extends StatelessWidget {
           showBottomSheet(
             context: context, 
             builder: (BuildContext context) {
-              return BottomBar(thumbnail,nama,harga);
+              return BottomBar(Menudata.id,Menudata.ImgMenu,Menudata.NamaMenu,Menudata.PriceMenu);
             }
           );
         },
@@ -37,7 +37,7 @@ class ProductItems extends StatelessWidget {
                 ),
                 child: FittedBox(
                   child: Image.asset(
-                    thumbnail,
+                    Menudata.ImgMenu,
                     fit: BoxFit.fill,
                   ),
                 )),
@@ -61,7 +61,7 @@ class ProductItems extends StatelessWidget {
                 ],
               ),
               child: Text(
-                nama,
+                Menudata.NamaMenu,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   height: 1.6,

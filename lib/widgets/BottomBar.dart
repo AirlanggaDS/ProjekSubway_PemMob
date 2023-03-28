@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:subway/providers/cart.dart';
+import 'package:provider/provider.dart';
 
 class BottomBar extends StatelessWidget {
+  final String IdMenu;
   final String FotoMenu;
   final String NamaMenu;
-  final String PriceMenu;
-  BottomBar(this.FotoMenu, this.NamaMenu, this.PriceMenu);
+  final double PriceMenu;
+  BottomBar(this.IdMenu,this.FotoMenu, this.NamaMenu, this.PriceMenu);
 
   @override
   Widget build(BuildContext context) {
+    final cart = Provider.of<Cart> (context, listen: false);
     return Container(
       height: 400,
       decoration: BoxDecoration(
@@ -49,13 +53,19 @@ class BottomBar extends StatelessWidget {
               ),
             ),
             Container(
-              child: Text(PriceMenu, style: TextStyle(
+              child: Text("Rp. $PriceMenu", style: TextStyle(
                 fontSize: 24
               ),),
               margin: EdgeInsets.only(top: 30, bottom: 30),
             ),
             InkWell(
-              onTap: () => Navigator.pop(context),
+              onTap: () {
+                cart.AddCart(IdMenu, NamaMenu, PriceMenu);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text("Add to cart"),
+                    duration: Duration(milliseconds: 500),));
+              },
               child: Container(
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
