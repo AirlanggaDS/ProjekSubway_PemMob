@@ -27,28 +27,30 @@ class AboutUs extends StatelessWidget {
               child: Container(
                 width: 300,
                 height: 100,
+                padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.amber,
+                  color: Colors.white,
                   borderRadius: BorderRadius.circular(10)
                 ),
                 child: ListTile(
-                  leading: Image.asset("images/angga.png", fit: BoxFit.cover,),
-                  title: Text('Airlangga Dwi Satrio',style: TextStyle(color: Colors.white),),
-                  subtitle: Text('082111633003', style: TextStyle(color: Colors.white),),
+                  leading: Image.asset("images/angga.png", width: 50, fit: BoxFit.cover),
+                  title: Text('Airlangga Dwi Satrio',style: TextStyle(color: Colors.black),),
+                  subtitle: Text('082111633003', style: TextStyle(color: Colors.black),),
                 ),
               ),
             ),
             Container(
               width: 300,
               height: 100,
+              padding: EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: Colors.amber,
+                color: Colors.white,
                 borderRadius: BorderRadius.circular(10)
               ),
               child: ListTile(
-                leading: Image.asset("images/rayhan-removebg.png", fit: BoxFit.cover,),
-                title: Text('Rayhan Azazaka Firdaus Muzakom',style: TextStyle(color: Colors.white),),
-                subtitle: Text('082111633059', style: TextStyle(color: Colors.white),),
+                leading: Image.asset("images/rayhan-removebg.png",  width: 50, fit: BoxFit.cover),
+                title: Text('Rayhan Azazaka Firdaus Muzakom',style: TextStyle(color: Colors.black),),
+                subtitle: Text('082111633059', style: TextStyle(color: Colors.black),),
               ),
             ),
             IconButton(onPressed: (){
