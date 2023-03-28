@@ -165,9 +165,9 @@ class _SignUpState extends State<SignUp> {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)
                     ),
-      backgroundColor: Colors.amber,
-      title: Text("Alert",style: TextStyle(color: Colors.white)),
-      content: Text("Please Accept with Policy and Privacy",style: TextStyle(color: Colors.white)) ,
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      title: Text("Alert",style: TextStyle(color: Colors.black)),
+      content: Text("Please Accept with Policy and Privacy",style: TextStyle(color: Colors.black)) ,
       actions: [
           ElevatedButton(
             style: ElevatedButton.styleFrom(
