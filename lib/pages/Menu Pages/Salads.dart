@@ -211,7 +211,14 @@ class _SaladsState extends State<Salads> {
                           ]))
                 ],
               )),
-            )));
+            ),
+            floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          // Add your onPressed code here!
+        },
+        label: const Text('Cart',style: TextStyle(color: Color.fromARGB(255, 3, 178, 58)),),
+        icon: const Icon(Icons.shopping_cart, color: Color.fromARGB(255, 3, 178, 58),),
+        backgroundColor: Colors.white,)));
   }
 }
 

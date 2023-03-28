@@ -6,7 +6,8 @@ import 'package:subway/widgets/BottomBar.dart';
 class ProductItems extends StatelessWidget {
   final String thumbnail;
   final String nama;
-  ProductItems(this.thumbnail, this.nama);
+  final String harga;
+  ProductItems(this.thumbnail, this.nama, this.harga);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class ProductItems extends StatelessWidget {
           showBottomSheet(
             context: context, 
             builder: (BuildContext context) {
-              return BottomBar(thumbnail,nama);
+              return BottomBar(thumbnail,nama,harga);
             }
           );
         },
