@@ -5,8 +5,8 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:provider/provider.dart';
-import '../../providers/sandwiches_product.dart';
 import '../../widgets/MenuGrid.dart';
+import '../cart_screen.dart';
 
 class Sandwiches extends StatefulWidget {
   const Sandwiches({super.key});
@@ -28,12 +28,15 @@ class _SandwichesState extends State<Sandwiches> {
               toolbarHeight: 80,
               leading: Padding(
                 padding: EdgeInsets.only(left: 30, top: 30),
-                child: Container(
-                  child: Image.asset(
-                    "images/logo1.png",
-                    width: 70,
-                    height: 70,
-                    alignment: Alignment.center,
+                child: InkWell(
+                  onTap: () => Navigator.pop(context),
+                  child: Container(
+                    child: Image.asset(
+                      "images/logo1.png",
+                      width: 70,
+                      height: 70,
+                      alignment: Alignment.center,
+                    ),
                   ),
                 ),
               ),
@@ -124,7 +127,7 @@ class _SandwichesState extends State<Sandwiches> {
                           topRight: Radius.circular(30)),
                       color: Colors.white,
                     ),
-                    child: GridMenu())),
+                    child: GridMenu2())),
                 Align(
                   alignment: Alignment.topCenter,
                   child: Container(
@@ -137,9 +140,8 @@ class _SandwichesState extends State<Sandwiches> {
                 ),
               ],
             )),floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Add your onPressed code here!
-        },
+        onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ScreenCart())),
         label: const Text('Cart',style: TextStyle(color: Color.fromARGB(255, 3, 178, 58)),),
         icon: const Icon(Icons.shopping_cart, color: Color.fromARGB(255, 3, 178, 58),),
         backgroundColor: Colors.white,)));
