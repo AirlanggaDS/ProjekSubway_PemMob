@@ -17,6 +17,14 @@ void main() {
       ChangeNotifierProvider(
         create: (context) => sandwiches_product(),),
       ChangeNotifierProvider(
+        create: (context) => drinks_product(),),
+      ChangeNotifierProvider(
+        create: (context) => side_product(),),
+      ChangeNotifierProvider(
+        create: (context) => wrap_product(),),
+      ChangeNotifierProvider(
+        create: (context) => salad_product(),),
+      ChangeNotifierProvider(
         create: (context) => Cart(),)
     ],
     child: MaterialApp(

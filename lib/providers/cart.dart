@@ -33,4 +33,8 @@ class Cart with ChangeNotifier{
     };
     notifyListeners();
   }
+  void DeleteCart( _items){
+    _items.remove(_items);
+    notifyListeners();
+  }
 }

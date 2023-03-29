@@ -152,7 +152,7 @@ class Menu extends StatelessWidget {
                         onTap: () => Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => Salads())),
+                                builder: (context) => Salad())),
                         child: RightKategoriMenu(
                         imgMenu: "images/kategori menu/salads.png",
                         titleMenu: "Salads",

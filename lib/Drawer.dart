@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:subway/pages/AboutUs.dart';
 import 'package:subway/pages/Login.dart';
+import 'package:subway/pages/cart_screen.dart';
 import 'package:subway/pages/location.dart';
 import 'package:subway/pages/menu.dart';
 import 'package:subway/pages/profil.dart';
@@ -29,7 +30,7 @@ class DrawerSide extends StatelessWidget {
             text: 'Order',
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => Menu()));
+                  context, MaterialPageRoute(builder: (context) => ScreenCart()));
             }),
         _drawerItem(
             icon: Icons.wallet_giftcard,
