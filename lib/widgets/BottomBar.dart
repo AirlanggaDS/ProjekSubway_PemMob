@@ -60,7 +60,7 @@ class BottomBar extends StatelessWidget {
             ),
             InkWell(
               onTap: () {
-                cart.AddCart(IdMenu, NamaMenu, PriceMenu);
+                cart.AddCart(IdMenu, FotoMenu, NamaMenu, PriceMenu);
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text("Add to cart"),
