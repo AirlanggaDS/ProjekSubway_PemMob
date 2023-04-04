@@ -120,7 +120,7 @@ class _SandwichesState extends State<Sandwiches> {
                     constraints: BoxConstraints(
                         minHeight: 650, maxHeight: double.infinity),
                     margin: EdgeInsets.only(top: 30),
-                    padding: EdgeInsets.only(top: 50,bottom: 50),
+                    padding: EdgeInsets.only(top: 50),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(30),
