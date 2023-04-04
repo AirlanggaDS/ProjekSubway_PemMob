@@ -23,7 +23,9 @@ class _ScreenCartState extends State<ScreenCart> {
           toolbarHeight: 80,
           leading: Padding(
             padding: EdgeInsets.only(left: 30, top: 20, bottom: 20),
-            child: Container(
+            child: InkWell(
+              onTap: ()=>
+                Navigator.pop(context),
               child: Image.asset(
                 "images/logo1.png",
                 width: 70,

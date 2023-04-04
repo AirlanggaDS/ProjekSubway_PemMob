@@ -139,12 +139,24 @@ class _SaladState extends State<Salad> {
                   ),
                 ),
               ],
-            )),floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => Navigator.push(context,
+            )),floatingActionButton: Align(
+            alignment: Alignment(1, 0.8),
+            child: FloatingActionButton.extended(
+              onPressed: () => Navigator.push(context,
                   MaterialPageRoute(builder: (context) => ScreenCart())),
-        label: const Text('Cart',style: TextStyle(color: Color.fromARGB(255, 3, 178, 58)),),
-        icon: const Icon(Icons.shopping_cart, color: Color.fromARGB(255, 3, 178, 58),),
-        backgroundColor: Colors.white,)));
+              label: const Text(
+                'Cart',
+                style: TextStyle(color: Color.fromARGB(255, 3, 178, 58)),
+              ),
+              icon: const Icon(
+                Icons.shopping_cart,
+                color: Color.fromARGB(255, 3, 178, 58),
+              ),
+              backgroundColor: Colors.white,
+            ),
+          ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.endContained));
   }
 }
 

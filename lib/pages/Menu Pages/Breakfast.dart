@@ -127,31 +127,31 @@ class Breakfast extends StatelessWidget {
                 child: Container(
                   child: Text(
                     "Breakfast",
-                    style:
-                        TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                   margin: EdgeInsets.only(top: 50),
                 ),
               ),
             ],
           )),
-          floatingActionButton: FloatingActionButton.extended(
-    
-            onPressed: 
-               () => Navigator.push(context,
+          floatingActionButton: Align(
+            alignment: Alignment(1, 0.8),
+            child: FloatingActionButton.extended(
+              onPressed: () => Navigator.push(context,
                   MaterialPageRoute(builder: (context) => ScreenCart())),
-      
-            label: const Text(
-              'Cart',
-              style: TextStyle(color: Color.fromARGB(255, 3, 178, 58)),
+              label: const Text(
+                'Cart',
+                style: TextStyle(color: Color.fromARGB(255, 3, 178, 58)),
+              ),
+              icon: const Icon(
+                Icons.shopping_cart,
+                color: Color.fromARGB(255, 3, 178, 58),
+              ),
+              backgroundColor: Colors.white,
             ),
-            icon: const Icon(
-              Icons.shopping_cart,
-              color: Color.fromARGB(255, 3, 178, 58),
-            ),
-            backgroundColor: Colors.white,
           ),
-          ),
+          floatingActionButtonLocation:
+              FloatingActionButtonLocation.endContained),
     );
   }
 }

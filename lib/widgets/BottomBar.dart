@@ -76,7 +76,7 @@ class BottomBar extends StatelessWidget {
                   style: TextStyle(
                       color: Color.fromARGB(255, 255, 255, 255),
                       fontWeight: FontWeight.bold,
-                      fontSize: 30),
+                      fontSize: 25),
                   textAlign: TextAlign.center,
                 ),
               ),
