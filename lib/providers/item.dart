@@ -35,3 +35,63 @@ class sandwiches_product with ChangeNotifier{
   }
 }
 
+class drinks_product with ChangeNotifier{
+  List<Product> _drinksproduct = [
+    Product("17", "images/drinks/Aqua-300ml-680x680.png" , "Aqua", 5000),
+    Product("18", "images/drinks/carbonated-drinks-680x680.png", "Carbonated Drinks", 10000),
+    Product("19", "images/drinks/coffee-1-680x680.png", "Coffe", 10000),
+    Product("20", "images/drinks/minutemadepulpyorange-680x680.png", "Minute Maid Pulpy", 8000)
+  ];
+  List<Product> get drinksproduct {
+    return [..._drinksproduct];
+  }
+}
+
+class salad_product with ChangeNotifier{
+  List<Product> _saladproduct = [
+    Product("21", "images/salads/Buffalo_Chicken_Salad_JPEG_594x334.jpg" , "BBQ Chicken", 5000),
+    Product("22", "images/salads/Chicken_Roasted_Salad_594x334.jpg", "Chicken Slice", 10000),
+    Product("23", "images/salads/Chicken_Teriyaki_salad_594x334.jpg", "Chicken Teriyaki", 10000),
+    Product("24", "images/salads/Chipotle_Steak_Melt_Salads_594x334.jpg", "Steak & Cheese", 8000),
+    Product("25",  "images/salads/Italian_BMT_Salad_594x334.jpg", "Italian B.M.T", 8000),
+    Product("26",  "images/salads/Tuna_Mayo_Salad_594x334.jpg", "Tuna Mayo", 8000),
+    Product("27",  "images/salads/Chicken_Roasted_Salad_594x334.jpg", "Roasted Chicken", 8000),
+    Product("28", "images/salads/Italian_BMT_Salad_594x334.jpg", "Spicy Italian", 8000),
+  ];
+  List<Product> get saladproduct {
+    return [..._saladproduct];
+  }
+}
+
+class side_product with ChangeNotifier{
+  List<Product> _sideproduct = [
+    Product("29", "images/sides/RPLC-chocolatechipcookie_PR_PR-1-680x680.png" , "Chocolate Chip Cookie", 5000),
+    Product("30",  "images/sides/RPLC-doublechocolatechipcookie-1-680x680.png", "Double Chocolate Chip Cookie", 10000),
+    Product("31",  "images/sides/RPLC-whitechipmacadamianutcookie-1-680x680.png", "Madamia Nut Cookie", 10000),
+    Product("32",  "images/sides/png-transparent-oatmeal-raisin-cookies-chocolate-chip-cookie-peanut-butter-cookie-schmackary-s-baking-biscuit-680x680.png", "Oatmeal Raisin Cookie", 8000),
+    Product("33", "images/sides/Chicken-Ham-_-Cheese-Toastie-680x680.png", "Chicken Ham Cheese Toastie", 8000),
+    Product("34",  "images/sides/Egg-Mayo-Toastie-680x680.png", "Egg Mayo Toastie", 8000),
+    Product("35",  "images/sides/SeekPng.com_pringles-png_2905473-680x680.png", "Pringles Original", 8000),
+    Product("36",  "images/sides/SeekPng.com_pringles-png_9159532-680x680.png", "Pringles Sour Cream", 8000),
+    Product("37",  "images/sides/mushroom-soup-680x680.png", "Mushroom Soup", 8000),
+  ];
+  List<Product> get sideproduct {
+    return [..._sideproduct];
+  }
+}
+
+class wrap_product with ChangeNotifier{
+  List<Product> _wrapproduct = [
+    Product("38", "images/wraps/BBQ_Chicken_wrap_594x334.jpg" , "BBQ Chicken", 5000),
+    Product("39",  "images/wraps/Chicken_Strip_Wrap_594x334.jpg", "Chicken Slice", 10000),
+    Product("40",   "images/wraps/Chicken_Teriyaki_Wrap_594x334.jpg", "Chicken Teriyaki", 10000),
+    Product("41",  "images/wraps/Italian_BMT_Wrap_594x334.png", "Italian B.M.T", 8000),
+    Product("42", "images/wraps/Chicken_Strip_Wrap_594x334.jpg", "Roast Chicken", 8000),
+    Product("43",  "images/wraps/Italian_BMT_Wrap_594x334.png", "Spicy Italian", 8000),
+    Product("44",  "images/wraps/Steak__Cheese_Wrap_594x334.jpg", "Steak & Cheese", 8000),
+    Product("45",  "images/wraps/Tuna_Mayo_Wrap_594x334.jpg", "Tuna Mayo", 8000),
+  ];
+  List<Product> get wrapproduct {
+    return [..._wrapproduct];
+  }
+}

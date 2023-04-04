@@ -1,12 +1,20 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:provider/provider.dart';
 import 'package:subway/providers/cart.dart';
 
-class ScreenCart extends StatelessWidget {
+
+class ScreenCart extends StatefulWidget {
   const ScreenCart({super.key});
 
+  @override
+  State<ScreenCart> createState() => _ScreenCartState();
+}
+
+class _ScreenCartState extends State<ScreenCart> {
   @override
   Widget build(BuildContext context) {
     final DataPesanan = Provider.of<Cart>(context, listen: false);

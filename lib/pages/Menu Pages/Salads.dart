@@ -1,16 +1,21 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:subway/pages/menu.dart';
 
-class Salads extends StatefulWidget {
-  const Salads({super.key});
+import 'dart:developer';
+
+import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:provider/provider.dart';
+import '../../widgets/MenuGrid.dart';
+import '../cart_screen.dart';
+
+class Salad extends StatefulWidget {
+  const Salad({super.key});
 
   @override
-  State<Salads> createState() => _SaladsState();
+  State<Salad> createState() => _SaladState();
 }
 
-class _SaladsState extends State<Salads> {
+class _SaladState extends State<Salad> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
@@ -23,12 +28,15 @@ class _SaladsState extends State<Salads> {
               toolbarHeight: 80,
               leading: Padding(
                 padding: EdgeInsets.only(left: 30, top: 30),
-                child: Container(
-                  child: Image.asset(
-                    "images/logo1.png",
-                    width: 70,
-                    height: 70,
-                    alignment: Alignment.center,
+                child: InkWell(
+                  onTap: () => Navigator.pop(context),
+                  child: Container(
+                    child: Image.asset(
+                      "images/logo1.png",
+                      width: 70,
+                      height: 70,
+                      alignment: Alignment.center,
+                    ),
                   ),
                 ),
               ),
@@ -106,244 +114,37 @@ class _SaladsState extends State<Salads> {
               ),
             ),
             body: Center(
-              child: (ListView(
-                children: [
-                  Container(
-                      height: 950,
-                      margin: EdgeInsets.only(top: 30),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(30),
-                            topRight: Radius.circular(30)),
-                        color: Colors.white,
-                      ),
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Row(
-                              children: [
-                                InkWell(
-                                  onTap: () => Navigator.pop(
-                                      context),
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(left: 20, right: 50),
-                                    child: Icon(
-                                      Icons.arrow_back,
-                                      color: Color.fromARGB(255, 3, 178, 58),
-                                      size: 24.0,
-                                      
-                                    ),
-                                  ),
-                                ),
-                                Container(
-                                  child: Text(
-                                    "Salads",
-                                    style: TextStyle(
-                                        fontSize: 30,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  margin: EdgeInsets.only(top: 15),
-                                  padding: EdgeInsets.only(left: 50),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                LeftMenu(
-                                  imgMenu:
-                                      "images/salads/Buffalo_Chicken_Salad_JPEG_594x334.jpg",
-                                  titleMenu: "BBQ Chicken",
-                                ),
-                                RightMenu(
-                                  imgMenu:
-                                      "images/salads/Chicken_Roasted_Salad_594x334.jpg",
-                                  titleMenu: "Chicken Slice",
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                LeftMenu(
-                                  imgMenu:
-                                      "images/salads/Chicken_Teriyaki_salad_594x334.jpg",
-                                  titleMenu: "Chicken Teriyaki",
-                                ),
-                                RightMenu(
-                                  imgMenu:
-                                      "images/salads/Chipotle_Steak_Melt_Salads_594x334.jpg",
-                                  titleMenu: "Steak & Cheese",
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                LeftMenu(
-                                  imgMenu:
-                                      "images/salads/Italian_BMT_Salad_594x334.jpg",
-                                  titleMenu: "Italian B.M.T",
-                                ),
-                                RightMenu(
-                                  imgMenu:
-                                      "images/salads/Tuna_Mayo_Salad_594x334.jpg",
-                                  titleMenu: "Tuna Mayo",
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                LeftMenu(
-                                  imgMenu:
-                                      "images/salads/Chicken_Roasted_Salad_594x334.jpg",
-                                  titleMenu: "Roasted Chicken",
-                                ),
-                                RightMenu(
-                                  imgMenu:
-                                      "images/salads/Italian_BMT_Salad_594x334.jpg",
-                                  titleMenu: "Spicy Italian",
-                                ),
-                              ],
-                            ),
-                            
-                          ]))
-                ],
-              )),
-            ),
-            floatingActionButton: FloatingActionButton.extended(
-        onPressed: () {
-          // Add your onPressed code here!
-        },
+                child: Stack(
+              children: [
+                (Container(
+                    constraints: BoxConstraints(
+                        minHeight: 650, maxHeight: double.infinity),
+                    margin: EdgeInsets.only(top: 30),
+                    padding: EdgeInsets.only(top: 50),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(30),
+                          topRight: Radius.circular(30)),
+                      color: Colors.white,
+                    ),
+                    child: GridMenu4())),
+                Align(
+                  alignment: Alignment.topCenter,
+                  child: Container(
+                    child: Text(
+                      "Salads",
+                      style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    ),
+                    margin: EdgeInsets.only(top: 50),
+                  ),
+                ),
+              ],
+            )),floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ScreenCart())),
         label: const Text('Cart',style: TextStyle(color: Color.fromARGB(255, 3, 178, 58)),),
         icon: const Icon(Icons.shopping_cart, color: Color.fromARGB(255, 3, 178, 58),),
         backgroundColor: Colors.white,)));
   }
 }
 
-class RightMenu extends StatelessWidget {
-  final String imgMenu;
-  final String titleMenu;
-
-  const RightMenu({required this.titleMenu, required this.imgMenu});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 10, right: 20),
-            child: Container(
-                width: 170,
-                height: 170,
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: FittedBox(
-                  child: Image.asset(
-                    imgMenu,
-                    fit: BoxFit.fill,
-                  ),
-                )),
-          ),
-          Center(
-            child: Container(
-              margin: const EdgeInsets.only(left: 15),
-              alignment: FractionalOffset.topCenter,
-              height: 35,
-              width: 160,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 3,
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: Text(
-                titleMenu,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  height: 1.6,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class LeftMenu extends StatelessWidget {
-  final String imgMenu;
-  final String titleMenu;
-
-  const LeftMenu({required this.titleMenu, required this.imgMenu});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 20),
-            child: Container(
-                width: 170,
-                height: 170,
-                decoration: BoxDecoration(
-                  color: Colors.transparent,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: FittedBox(
-                  child: Image.asset(
-                    imgMenu,
-                    fit: BoxFit.fill,
-                  ),
-                )),
-          ),
-          Center(
-            child: Container(
-              margin: const EdgeInsets.only(left: 25),
-              alignment: FractionalOffset.topCenter,
-              height: 35,
-              width: 160,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    spreadRadius: 2,
-                    blurRadius: 3,
-                    offset: Offset(0, 3),
-                  ),
-                ],
-              ),
-              child: Text(
-                titleMenu,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  height: 1.6,
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
