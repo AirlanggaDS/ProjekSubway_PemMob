@@ -26,6 +26,13 @@ class DrawerSide extends StatelessWidget {
                   context, MaterialPageRoute(builder: (context) => Profile()));
             }),
         _drawerItem(
+            icon: Icons.shopping_cart,
+            text: 'Cart',
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => ScreenCart()));
+            }),
+        _drawerItem(
             icon: Icons.menu_book,
             text: 'Order',
             onTap: () {
