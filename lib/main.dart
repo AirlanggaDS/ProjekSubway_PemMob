@@ -4,7 +4,8 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:provider/provider.dart';
 import 'package:subway/pages/Login.dart';
 import 'package:subway/pages/StartApp.dart';
-
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'providers/item.dart';
 import 'providers/cart.dart';
 

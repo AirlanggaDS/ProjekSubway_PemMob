@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "902234051198",
+    "project_id": "subway-18f9d",
+    "storage_bucket": "subway-18f9d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:902234051198:android:15fd4abb9a43a5f82a7e2f",
+        "android_client_info": {
+          "package_name": "com.example.projek_kelompok"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "902234051198-qtv5b8891ocf70cvst18t1geuj29jm89.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOKs5rqKgZzxhc0ESlKVe3BM9hcNkhujs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "902234051198-qtv5b8891ocf70cvst18t1geuj29jm89.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

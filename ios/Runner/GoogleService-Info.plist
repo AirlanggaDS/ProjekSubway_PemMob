@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>902234051198-aaedb8p2gk6ta8fkguj1egad27d57rmh.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.902234051198-aaedb8p2gk6ta8fkguj1egad27d57rmh</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBJtir4D_hJJn9rQKWcmkm36gKL0oEVc7A</string>
+	<key>GCM_SENDER_ID</key>
+	<string>902234051198</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.projekKelompok</string>
+	<key>PROJECT_ID</key>
+	<string>subway-18f9d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>subway-18f9d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:902234051198:ios:418df3e51e10fefe2a7e2f</string>
+</dict>
+</plist>
