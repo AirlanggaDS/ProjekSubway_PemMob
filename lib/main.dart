@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'package:subway/pages/Login.dart';
 import 'package:subway/pages/StartApp.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:subway/providers/Auth.dart';
 import 'firebase_options.dart';
 import 'providers/item.dart';
 import 'providers/cart.dart';
@@ -26,7 +27,9 @@ void main() {
       ChangeNotifierProvider(
         create: (context) => salad_product(),),
       ChangeNotifierProvider(
-        create: (context) => Cart(),)
+        create: (context) => Cart(),),
+      ChangeNotifierProvider(
+        create: (context) => Auth(),),
     ],
     child: MaterialApp(
       debugShowCheckedModeBanner: false,
