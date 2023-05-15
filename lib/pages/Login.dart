@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:http/http.dart';
+import 'package:provider/provider.dart';
 import 'package:subway/Navbar.dart';
 import 'package:subway/pages/home.dart';
 import 'package:subway/pages/signup.dart';
+
+import '../providers/Auth.dart';
 
 
 class Login extends StatefulWidget {
@@ -15,6 +19,22 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  Duration get logintime => Duration(milliseconds: 2000);
+
+   Future<String?> _authUserLogin(String email, String password) {
+    return Future.delayed(logintime).then((_) async {
+      try {
+        await Provider.of<Auth>(context, listen: false).LoginAuth(email, password);
+      } catch (err) {
+        print(err);
+        return err.toString();
+      }
+      return null;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -63,10 +83,11 @@ class _LoginState extends State<Login> {
               width: 350,
               height: 50,
               child: TextFormField(
+                controller: emailController,
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
-                  labelText: "Username",
+                  labelText: "Username/email",
                   border: UnderlineInputBorder(
                     borderRadius: BorderRadius.circular(10)
                   )
@@ -80,6 +101,7 @@ class _LoginState extends State<Login> {
               width: 350,
               height: 50,
               child: TextFormField(
+                controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   filled: true,
@@ -118,8 +140,12 @@ class _LoginState extends State<Login> {
             ],
           ),
           InkWell(
-                onTap: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Navbar())),
+                onTap: () {
+                  _authUserLogin(
+                    emailController.text, passwordController.text).then((response){
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>Navbar()));
+                    });
+                },
                 child: Ink(
                   padding: const EdgeInsets.symmetric(vertical: 12),
                   width: 350,

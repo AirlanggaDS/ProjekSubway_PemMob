@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:http/http.dart';
+import 'package:provider/provider.dart';
 import 'package:subway/pages/AccountCreate.dart';
 import 'package:subway/pages/Login.dart';
+import 'package:subway/providers/Auth.dart';
 
 class SignUp extends StatefulWidget {
   SignUp({super.key});
@@ -13,6 +16,27 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  final TextEditingController fnameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+  Duration get LoginTime => Duration(milliseconds: 2000);
+
+  Future<String?>_authUserSignUp(
+    String email, String password
+  ){
+    return Future.delayed(LoginTime).then((_) async{
+      try {
+        await Provider.of<Auth>(context, listen: false).Register( email, password);
+      } catch (err) {
+        print(err);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text(err.toString()),
+          duration: Duration(milliseconds: 500),)
+        );
+      }
+      return null;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,10 +71,11 @@ class _SignUpState extends State<SignUp> {
               width: 350,
               height: 50,
               child: TextFormField(
+                controller: fnameController,
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
-                  labelText: "Username" ,
+                  labelText: "Nama Lengkap" ,
                   border: UnderlineInputBorder(
                     borderRadius: BorderRadius.circular(10)
                   )
@@ -64,6 +89,7 @@ class _SignUpState extends State<SignUp> {
               width: 350,
               height: 50,
               child: TextFormField(
+                controller: emailController,
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
@@ -98,6 +124,7 @@ class _SignUpState extends State<SignUp> {
               width: 350,
               height: 50,
               child: TextFormField(
+                controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   filled: true,
@@ -155,7 +182,9 @@ class _SignUpState extends State<SignUp> {
                   print(widget.checkedValue);
 
                   if (widget.checkedValue == true) {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const Create()));
+                   _authUserSignUp(emailController.text, passwordController.text).then((response) {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> Login()));
+                   });
                   }
                   else{
                     showDialog(
