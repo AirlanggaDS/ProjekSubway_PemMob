@@ -1,41 +1,36 @@
-import 'dart:convert';
 
+
+import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'package:subway/models/user.dart';
 
-class Auth with ChangeNotifier{
-   Future <void>Register (String email, String Password) async {
-    Uri url = Uri.parse('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyCOKs5rqKgZzxhc0ESlKVe3BM9hcNkhujs');
-    try{
-      var response = await http.post(url,body: json.encode({
-      "Email": email,
-      "Password": Password,
-      "returnSecureToken": true,  
-    }));
-    var responseData = json.decode(response.body);
-    if(responseData['error'] != null){
-      throw responseData['error']['message'];
-    }
-   } catch (error){
-    throw error;
-   }
-    }
+class AuthService with ChangeNotifier{
+  final auth.FirebaseAuth _firebaseAuth = auth.FirebaseAuth.instance;
 
-    Future <void> LoginAuth (String Email, String Password) async {
-     Uri url = Uri.parse('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyCOKs5rqKgZzxhc0ESlKVe3BM9hcNkhujs');
-     try{
-      var response = await http.post(url,body: json.encode({
-      "Email": Email,
-      "Password": Password,
-      "returnSecureToken": true,  
-    }));
-     var responseData = json.decode(response.body);
-    if(responseData['error'] != null){
-      throw responseData['error']['message'];
+  User? _userFromFirebase(auth.User? user){
+    if (user == null){
+      return null;
     }
-   } catch (error){
-    throw error;
-   }
-     } 
-    }
-    
+    return User(user.uid, user.email);
+  }
+
+  Stream<User?>? get user {
+    return _firebaseAuth.authStateChanges().map(_userFromFirebase);
+  }
+
+  Future<User?> signInWithEmailAndPassword(String Email, String password) async {
+    final credential = await _firebaseAuth.signInWithEmailAndPassword(email: Email, password: password);
+
+    return _userFromFirebase(credential.user);
+  }
+
+  Future<User?> createUserWithEmailAndPassword(String Email, String password) async {
+    final credential = await _firebaseAuth.createUserWithEmailAndPassword(email: Email, password: password);
+
+    return _userFromFirebase(credential.user);
+  }
+
+  Future<void> signOut () async {
+    return await _firebaseAuth.signOut();
+  }
+}

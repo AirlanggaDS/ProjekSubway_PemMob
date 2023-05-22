@@ -19,26 +19,11 @@ class _SignUpState extends State<SignUp> {
   final TextEditingController fnameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  Duration get LoginTime => Duration(milliseconds: 2000);
-
-  Future<String?>_authUserSignUp(
-    String email, String password
-  ){
-    return Future.delayed(LoginTime).then((_) async{
-      try {
-        await Provider.of<Auth>(context, listen: false).Register( email, password);
-      } catch (err) {
-        print(err);
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text(err.toString()),
-          duration: Duration(milliseconds: 500),)
-        );
-      }
-      return null;
-    });
-  }
+  
+ 
   @override
   Widget build(BuildContext context) {
+    final authService = Provider.of<AuthService>(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Color.fromARGB(255, 3, 178, 58),
@@ -178,13 +163,13 @@ class _SignUpState extends State<SignUp> {
             ],
           ),
           InkWell(
-                onTap: () {
+                onTap: () async {
                   print(widget.checkedValue);
 
                   if (widget.checkedValue == true) {
-                   _authUserSignUp(emailController.text, passwordController.text).then((response) {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=> Login()));
-                   });
+                     await authService.createUserWithEmailAndPassword(emailController.text, passwordController.text);
+                    Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => Login()));
                   }
                   else{
                     showDialog(

@@ -21,22 +21,11 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  Duration get logintime => Duration(milliseconds: 2000);
 
-   Future<String?> _authUserLogin(String email, String password) {
-    return Future.delayed(logintime).then((_) async {
-      try {
-        await Provider.of<Auth>(context, listen: false).LoginAuth(email, password);
-      } catch (err) {
-        print(err);
-        return err.toString();
-      }
-      return null;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
+    final authService = Provider.of<AuthService>(context);
     return MaterialApp(
       
       debugShowCheckedModeBanner: false,
@@ -141,10 +130,7 @@ class _LoginState extends State<Login> {
           ),
           InkWell(
                 onTap: () {
-                  _authUserLogin(
-                    emailController.text, passwordController.text).then((response){
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (_)=>Navbar()));
-                    });
+                  authService.signInWithEmailAndPassword(emailController.text, passwordController.text);
                 },
                 child: Ink(
                   padding: const EdgeInsets.symmetric(vertical: 12),

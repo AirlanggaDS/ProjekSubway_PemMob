@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:provider/provider.dart';
 import 'package:subway/pages/AboutUs.dart';
 import 'package:subway/pages/Login.dart';
 import 'package:subway/pages/cart_screen.dart';
@@ -8,12 +9,14 @@ import 'package:subway/pages/location.dart';
 import 'package:subway/pages/menu.dart';
 import 'package:subway/pages/profil.dart';
 import 'package:subway/pages/reward.dart';
+import 'package:subway/providers/Auth.dart';
 
 class DrawerSide extends StatelessWidget {
   const DrawerSide({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final authservice = Provider.of<AuthService>(context);
     return Drawer(
       // ignore: sort_child_properties_last
       child: ListView(padding: EdgeInsets.zero, children: <Widget>[
@@ -77,7 +80,8 @@ class DrawerSide extends StatelessWidget {
                     ElevatedButton(
                         style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.white, elevation: 0),
-                        onPressed: () {
+                        onPressed: () async {
+                          await authservice.signOut();
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) => Login()));
                         },
