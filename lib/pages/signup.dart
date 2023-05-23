@@ -186,9 +186,9 @@ class _SignUpState extends State<SignUp> {
                     if (widget.checkedValue == true) {
                       if (_key.currentState!.validate()) {
                       try {
-                       await authService.createUserWithEmailAndPassword(emailController.text, passwordController.text);
+                       await authService.createUserWithEmailAndPassword(emailController.text, passwordController.text, phoneController.text, fnameController.text);
                        Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Login()));
+                      MaterialPageRoute(builder: (context) => AccCreate()));
                       } on FirebaseAuthException catch (error) {
                           errorMessage = error.message!;
                           showDialog(

@@ -11,7 +11,7 @@ class AuthService with ChangeNotifier{
     if (user == null){
       return null;
     }
-    return User(user.uid, user.email);
+    return User(user.uid, user.email, user.displayName, user.phoneNumber);
   }
 
   Stream<User?>? get user {
@@ -24,7 +24,7 @@ class AuthService with ChangeNotifier{
     return _userFromFirebase(credential.user);
   }
 
-  Future<User?> createUserWithEmailAndPassword(String Email, String password) async {
+  Future<User?> createUserWithEmailAndPassword(String Email, String password, String name_user, String no_telp) async {
     final credential = await _firebaseAuth.createUserWithEmailAndPassword(email: Email, password: password);
 
     return _userFromFirebase(credential.user);

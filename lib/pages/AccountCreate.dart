@@ -3,9 +3,13 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:subway/pages/Login.dart';
 
-class Create extends StatelessWidget {
-  const Create({super.key});
+class AccCreate extends StatefulWidget {
+  const AccCreate({super.key});
+@override
+  State<AccCreate> createState() => _AccCreateState();
+}
 
+class _AccCreateState extends State<AccCreate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
