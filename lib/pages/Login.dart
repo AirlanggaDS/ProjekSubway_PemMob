@@ -1,17 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:http/http.dart';
 import 'package:provider/provider.dart';
-import 'package:subway/Navbar.dart';
-import 'package:subway/pages/home.dart';
 import 'package:subway/pages/signup.dart';
 import 'package:subway/pages/validator.dart';
 
 import '../providers/Auth.dart';
 
 
+// ignore: must_be_immutable
 class Login extends StatefulWidget {
   Login({super.key});
   bool checkedValue = false;

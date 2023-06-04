@@ -6,6 +6,7 @@ import 'package:subway/pages/reward.dart';
 
 
 
+// ignore: must_be_immutable
 class Navbar extends StatefulWidget {
   int _selectedIndex = 0;
   List pages = [HomeScreen(),Menu(),Reward()];

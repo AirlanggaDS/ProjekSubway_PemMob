@@ -1,14 +1,12 @@
-
-
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/material.dart';
 import 'package:subway/models/user.dart';
 
-class AuthService with ChangeNotifier{
+class AuthService with ChangeNotifier {
   final auth.FirebaseAuth _firebaseAuth = auth.FirebaseAuth.instance;
 
-  User? _userFromFirebase(auth.User? user){
-    if (user == null){
+  User? _userFromFirebase(auth.User? user) {
+    if (user == null) {
       return null;
     }
     return User(user.uid, user.email, user.displayName, user.phoneNumber);
@@ -18,19 +16,36 @@ class AuthService with ChangeNotifier{
     return _firebaseAuth.authStateChanges().map(_userFromFirebase);
   }
 
-  Future<User?> signInWithEmailAndPassword(String Email, String password) async {
-    final credential = await _firebaseAuth.signInWithEmailAndPassword(email: Email, password: password);
+  Future<User?> signInWithEmailAndPassword(
+      String Email, String password) async {
+    final credential = await _firebaseAuth.signInWithEmailAndPassword(
+        email: Email, password: password);
 
     return _userFromFirebase(credential.user);
   }
 
-  Future<User?> createUserWithEmailAndPassword(String Email, String password, String name_user, String no_telp) async {
-    final credential = await _firebaseAuth.createUserWithEmailAndPassword(email: Email, password: password);
+  Future<User?> createUserWithEmailAndPassword(
+      String Email, String password, String name_user, String no_telp) async {
+    final credential = await _firebaseAuth.createUserWithEmailAndPassword(
+        email: Email, password: password);
 
     return _userFromFirebase(credential.user);
   }
 
-  Future<void> signOut () async {
+  Future<void> signOut() async {
     return await _firebaseAuth.signOut();
+  }
+
+  Future<User?> updateUserData(String displayName, String Photo,) async {
+    await auth.FirebaseAuth.instance.currentUser!
+        .updateDisplayName(displayName);
+    await auth.FirebaseAuth.instance.currentUser!.updatePhotoURL(Photo);
+    notifyListeners();
+    return null;
+  }
+   Future<User?> DeleteAcc() async {
+    await auth.FirebaseAuth.instance.currentUser!.delete();
+        notifyListeners();
+    return null;
   }
 }

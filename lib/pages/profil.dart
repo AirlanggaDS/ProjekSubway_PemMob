@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:subway/pages/editProfil.dart';
 
@@ -6,6 +7,7 @@ class Profile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _auth = FirebaseAuth.instance.currentUser;
     return Scaffold(
       backgroundColor: Colors.amber,
         appBar: AppBar(
@@ -67,12 +69,12 @@ class Profile extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Image.asset(
-                  "images/pfp.jpg",
+                  _auth!.photoURL.toString(),
                   fit: BoxFit.contain,
                 ),
               ),
-              const Text(
-                "User",
+               Text(
+                _auth.displayName.toString(),
                 style: TextStyle(
                     fontFamily: 'LexendDeca',
                     fontSize: 26,
@@ -184,7 +186,7 @@ class Profile extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(left: 15, top: 5),
                             child: Text(
-                              'Nama Lengkap : User',
+                              'Nama Lengkap : ${_auth.displayName.toString()}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500, fontSize: 15),
                             ),
@@ -192,19 +194,11 @@ class Profile extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(left: 15, top: 5),
                             child: Text(
-                              'Email : user@gmail.com',
+                              'Email : ${_auth.email.toString()}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500, fontSize: 15),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 15, top: 5),
-                            child: Text(
-                              'Nomor Telepon : 000000000000',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w500, fontSize: 15),
-                            ),
-                          )
                         ],
                       ),
                     ),

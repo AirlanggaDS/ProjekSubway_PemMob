@@ -1,17 +1,15 @@
-import 'dart:developer';
+
 
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
-import 'package:provider/provider.dart';
-import '../../providers/item.dart';
-import '../../providers/cart.dart';
 import '../../widgets/MenuGrid.dart';
 import 'package:subway/pages/cart_screen.dart';
 
 class Breakfast extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final Size size = MediaQuery.of(context).size;
     return SafeArea(
       child: Scaffold(

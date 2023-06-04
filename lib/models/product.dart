@@ -4,6 +4,7 @@ class Product with ChangeNotifier{
   @required String ImgMenu;
   @required String NamaMenu;
   @required double PriceMenu;
-  Product(this.id,this.ImgMenu, this.NamaMenu, this.PriceMenu);
+  @required int category;
+  Product(this.id,this.ImgMenu, this.NamaMenu, this.PriceMenu, this.category);
 
 }

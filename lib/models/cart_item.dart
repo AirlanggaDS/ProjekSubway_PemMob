@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 
 class CartItem{
-  String id;
-  String itemImg;
-  String Judul;
-  double price;
-  int qty;
+  @required String id;
+  @required String itemImg;
+  @required String Judul;
+  @required double price;
+  @required int qty;
 
   
   CartItem(
-    @required this.id, 
-    @required this.itemImg,
-    @required this.Judul, 
-    @required this.price, 
-    @required this.qty);
+     this.id, 
+     this.itemImg,
+     this.Judul, 
+     this.price, 
+     this.qty);
 }

@@ -1,12 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:provider/provider.dart';
 import 'package:subway/pages/AboutUs.dart';
 import 'package:subway/pages/Login.dart';
 import 'package:subway/pages/cart_screen.dart';
 import 'package:subway/pages/location.dart';
-import 'package:subway/pages/menu.dart';
 import 'package:subway/pages/profil.dart';
 import 'package:subway/pages/reward.dart';
 import 'package:subway/providers/Auth.dart';
@@ -119,15 +117,16 @@ class DrawerSide extends StatelessWidget {
 }
 
 Widget _drawerHeader() {
+  final _auth = FirebaseAuth.instance.currentUser;
   return UserAccountsDrawerHeader(
     currentAccountPicture: ClipOval(
       child: Image(
-        image: AssetImage('images/rayhan.jpg'),
+        image: AssetImage(_auth!.photoURL.toString()),
         fit: BoxFit.fill,
       ),
     ),
-    accountName: Text('User'),
-    accountEmail: Text('user@gmail.com'),
+    accountName: Text(_auth.displayName.toString()),
+    accountEmail: Text(_auth.email.toString()),
     decoration: BoxDecoration(color: Color.fromARGB(255, 3, 178, 58)),
   );
 }

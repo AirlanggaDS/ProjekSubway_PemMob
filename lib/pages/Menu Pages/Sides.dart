@@ -1,10 +1,9 @@
 
-import 'dart:developer';
+
 
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
-import 'package:provider/provider.dart';
 import '../../widgets/MenuGrid.dart';
 import '../cart_screen.dart';
 
@@ -18,6 +17,7 @@ class Sides extends StatefulWidget {
 class _SidesState extends State<Sides> {
   @override
   Widget build(BuildContext context) {
+    // ignore: unused_local_variable
     final Size size = MediaQuery.of(context).size;
     return SafeArea(
         child: Scaffold(
