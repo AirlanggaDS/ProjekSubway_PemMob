@@ -110,23 +110,7 @@ class _SignUpState extends State<SignUp> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: SizedBox(
-                  width: 350,
-                  height: 50,
-                  child: TextFormField(
-                    controller: urlController,
-                    validator: validateForm,
-                    decoration: InputDecoration(
-                        filled: true,
-                        fillColor: Colors.white,
-                        labelText: "Photo URL",
-                        border: UnderlineInputBorder(
-                            borderRadius: BorderRadius.circular(10))),
-                  ),
-                ),
-              ),
+              
               Padding(
                 padding: const EdgeInsets.only(top: 20),
                 child: SizedBox(

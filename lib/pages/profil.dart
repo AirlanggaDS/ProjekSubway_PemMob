@@ -38,7 +38,7 @@ class Profile extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                 ),
                 const Text(
-                  " REWARD",
+                  " PROFILE",
                   style: TextStyle(
                       color: Color.fromARGB(255, 255, 255, 255),
                       fontSize: 40,
@@ -64,13 +64,10 @@ class Profile extends StatelessWidget {
                     left: 15, top: 10, bottom: 20, right: 15),
                 height: 87,
                 width: 99,
-                decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 212, 212, 212),
-                  borderRadius: BorderRadius.circular(10),
-                ),
                 child: Image.asset(
-                  _auth!.photoURL.toString(),
+                  _auth!.photoURL ?? 'images/blank.jpg',
                   fit: BoxFit.contain,
+                  
                 ),
               ),
                Text(

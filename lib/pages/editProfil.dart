@@ -48,7 +48,7 @@ class editProfil extends StatelessWidget {
                     fontWeight: FontWeight.bold),
               ),
               const Text(
-                " REWARD",
+                " PROFILE",
                 style: TextStyle(
                     color: Color.fromARGB(255, 255, 255, 255),
                     fontSize: 40,

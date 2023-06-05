@@ -121,7 +121,7 @@ Widget _drawerHeader() {
   return UserAccountsDrawerHeader(
     currentAccountPicture: ClipOval(
       child: Image(
-        image: AssetImage(_auth!.photoURL.toString()),
+        image: AssetImage(_auth!.photoURL ?? 'images/blank.jpg') ,
         fit: BoxFit.fill,
       ),
     ),
