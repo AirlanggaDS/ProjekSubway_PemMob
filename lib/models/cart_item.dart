@@ -1,17 +1,35 @@
-import 'package:flutter/material.dart';
+class CartItem {
+  String id;
+  String Judul;
+  String itemImg;
+  double price;
+  int qty;
 
-class CartItem{
-  @required String id;
-  @required String itemImg;
-  @required String Judul;
-  @required double price;
-  @required int qty;
+  CartItem({
+    required this.id,
+    required this.Judul,
+    required this.itemImg,
+    required this.price,
+    required this.qty,
+  });
 
-  
-  CartItem(
-     this.id, 
-     this.itemImg,
-     this.Judul, 
-     this.price, 
-     this.qty);
+  factory CartItem.fromMap(Map<String, dynamic> map) {
+    return CartItem(
+      id: map['id'],
+      Judul: map['Judul'],
+      itemImg: map['itemImg'],
+      price: map['price'].toDouble(),
+      qty: map['qty'],
+    );
+  }
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'Judul': Judul,
+      'itemImg': itemImg,
+      'price': price,
+      'qty': qty,
+    };
+  }
 }

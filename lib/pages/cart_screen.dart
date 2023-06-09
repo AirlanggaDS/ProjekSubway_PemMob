@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
+import 'package:subway/pages/orderHistory.dart';
 import 'package:subway/providers/cart.dart';
+import 'package:subway/providers/order.dart';
 
 class ScreenCart extends StatefulWidget {
-  const ScreenCart({super.key});
+  const ScreenCart({Key? key}) : super(key: key);
 
   @override
   State<ScreenCart> createState() => _ScreenCartState();
@@ -23,8 +25,7 @@ class _ScreenCartState extends State<ScreenCart> {
           leading: Padding(
             padding: EdgeInsets.only(left: 30, top: 20, bottom: 20),
             child: InkWell(
-              onTap: ()=>
-                Navigator.pop(context),
+              onTap: () => Navigator.pop(context),
               child: Image.asset(
                 "images/logo1.png",
                 width: 70,
@@ -88,7 +89,8 @@ class _ScreenCartState extends State<ScreenCart> {
                                   ),
                                   Container(
                                     width: 230,
-                                    margin: EdgeInsets.only(top:10,bottom: 20),
+                                    margin:
+                                        EdgeInsets.only(top: 10, bottom: 20),
                                     child: Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -120,7 +122,7 @@ class _ScreenCartState extends State<ScreenCart> {
                                 margin: EdgeInsets.only(right: 30),
                                 child: InkWell(
                                   onTap: () => {
-                                    cart.RemoveCart(
+                                    cart.removeFromCart(
                                         cart.items.keys.elementAt(index))
                                   },
                                   child: Icon(
@@ -139,15 +141,16 @@ class _ScreenCartState extends State<ScreenCart> {
                 ),
                 Container(
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 10,bottom: 10,right: 20,left: 20),
+                    padding: const EdgeInsets.only(
+                        top: 10, bottom: 10, right: 20, left: 20),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Text("Rp. "+
-                              DataPesanan.total.toString(),
+                            child: Text(
+                              "Rp. " + DataPesanan.total.toString(),
                               style: TextStyle(
                                   fontSize: 18, fontWeight: FontWeight.w700),
                             ),
@@ -160,6 +163,29 @@ class _ScreenCartState extends State<ScreenCart> {
                           child: Padding(
                               padding: const EdgeInsets.all(12),
                               child: InkWell(
+                                onTap: () async {
+                                  if (cart.items.isNotEmpty) {
+                                    final orderProvider =
+                                        Provider.of<OrderProvider>(context,
+                                            listen: false);
+                                    final cartItems =
+                                        cart.items.values.toList();
+
+                                    // Melakukan order
+                                    await orderProvider.placeOrder(cartItems);
+
+                                    // Menghapus produk dari cart setelah order selesai
+                                    cart.clearCart();
+
+                                    // Navigasi ke halaman order history
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              OrderHistoryPage()),
+                                    );
+                                  }
+                                },
                                 child: Text(
                                   "Check Out",
                                   style: TextStyle(

@@ -7,6 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:subway/pages/signup.dart';
 import 'package:subway/pages/wrapper.dart';
 import 'package:subway/providers/Auth.dart';
+import 'package:subway/providers/order.dart';
 import 'providers/item.dart';
 import 'providers/cart.dart';
 
@@ -22,6 +23,8 @@ void main() async {
         create: (context) => Cart(),),
       ChangeNotifierProvider(
         create: (context) => AuthService(),),
+      ChangeNotifierProvider(
+        create: (context) => OrderProvider(),),
     ],
     child: MaterialApp(
       debugShowCheckedModeBanner: false,

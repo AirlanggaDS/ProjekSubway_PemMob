@@ -7,39 +7,62 @@ class Cart with ChangeNotifier {
   Map<String, CartItem> get items => _items;
 
   double get total {
-    var TotalHarga = 0.0;
-    _items.forEach((key, CartItem) {
-      TotalHarga += CartItem.qty * CartItem.price;
+    var totalPrice = 0.0;
+    _items.forEach((key, cartItem) {
+      totalPrice += cartItem.qty * cartItem.price;
     });
-    // notifyListeners();
-    return TotalHarga;
+    return totalPrice;
   }
 
-  void AddCart(
+  void addToCart(
       String productId, String productImg, String title, double price) {
     if (_items.containsKey(productId)) {
       _items.update(
-          productId,
-          (value) => CartItem(value.id, value.itemImg, value.Judul, value.price,
-              value.qty + 1));
+        productId,
+        (existingCartItem) => CartItem(
+          id: existingCartItem.id,
+          itemImg: existingCartItem.itemImg,
+          Judul: existingCartItem.Judul,
+          price: existingCartItem.price,
+          qty: existingCartItem.qty + 1,
+        ),
+      );
     } else {
       _items.putIfAbsent(
-          productId,
-          () =>
-              CartItem(DateTime.now().toString(), productImg, title, price, 1));
+        productId,
+        () => CartItem(
+          id: DateTime.now().toString(),
+          itemImg: productImg,
+          Judul: title,
+          price: price,
+          qty: 1,
+        ),
+      );
     }
-    ;
     notifyListeners();
   }
 
-  void RemoveCart(String product_id) {
-    if (!_items.containsKey(product_id)) return;
-    if (_items[product_id]!.qty > 1) {
-      _items[product_id]!.qty -= 1;
-      notifyListeners();
+  void removeFromCart(String productId) {
+    if (!_items.containsKey(productId)) return;
+    if (_items[productId]!.qty > 1) {
+      _items.update(
+        productId,
+        (existingCartItem) => CartItem(
+          id: existingCartItem.id,
+          itemImg: existingCartItem.itemImg,
+          Judul: existingCartItem.Judul,
+          price: existingCartItem.price,
+          qty: existingCartItem.qty - 1,
+        ),
+      );
     } else {
-      _items.remove(product_id);
-      notifyListeners();
+      _items.remove(productId);
     }
+    notifyListeners();
+  }
+
+  void clearCart() {
+    _items = {};
+    notifyListeners();
   }
 }

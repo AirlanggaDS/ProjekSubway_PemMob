@@ -5,6 +5,7 @@ import 'package:subway/pages/AboutUs.dart';
 import 'package:subway/pages/Login.dart';
 import 'package:subway/pages/cart_screen.dart';
 import 'package:subway/pages/location.dart';
+import 'package:subway/pages/orderHistory.dart';
 import 'package:subway/pages/profil.dart';
 import 'package:subway/pages/reward.dart';
 import 'package:subway/providers/Auth.dart';
@@ -38,7 +39,7 @@ class DrawerSide extends StatelessWidget {
             text: 'Order',
             onTap: () {
               Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => ScreenCart()));
+                  context, MaterialPageRoute(builder: (context) => OrderHistoryPage()));
             }),
         _drawerItem(
             icon: Icons.wallet_giftcard,

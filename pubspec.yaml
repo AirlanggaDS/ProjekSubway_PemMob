@@ -43,6 +43,7 @@ dependencies:
   http: ^0.13.6
   flutter_login: ^4.1.1
   html: ^0.15.3
+  firebase_database: ^10.2.2
 
 dev_dependencies:
   flutter_launcher_icons: "^0.12.0"

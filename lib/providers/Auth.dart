@@ -5,6 +5,8 @@ import 'package:subway/models/user.dart';
 class AuthService with ChangeNotifier {
   final auth.FirebaseAuth _firebaseAuth = auth.FirebaseAuth.instance;
 
+  get currentUser => null;
+
   User? _userFromFirebase(auth.User? user) {
     if (user == null) {
       return null;
