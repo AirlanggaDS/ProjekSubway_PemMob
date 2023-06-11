@@ -1,10 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:subway/Drawer.dart';
+import 'package:subway/providers/Auth.dart';
 
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final authservice = Provider.of<AuthService>(context);
+    final _auth = FirebaseAuth.instance.currentUser;
     return Scaffold(
       backgroundColor: Colors.amber,
       appBar: AppBar(
@@ -29,8 +34,7 @@ class HomeScreen extends StatelessWidget {
         ),
         title: Align(
           alignment: Alignment.centerRight,
-          child: Text(
-            "Hello User",
+          child: Text(_auth!.displayName.toString(),
             style: TextStyle(
               color: Colors.white,
               fontFamily: 'LexendDeca',

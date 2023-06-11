@@ -112,7 +112,7 @@ class DrawerSide extends StatelessWidget {
                   context, MaterialPageRoute(builder: (context) => AboutUs()));
             }),
       ]),
-      backgroundColor: Colors.amber,
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
     );
   }
 }

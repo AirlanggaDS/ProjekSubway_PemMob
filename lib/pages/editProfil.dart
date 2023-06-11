@@ -19,7 +19,7 @@ class editProfil extends StatelessWidget {
     final TextEditingController phoneController =
         TextEditingController(text: _auth.phoneNumber);
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         backgroundColor: Color.fromARGB(255, 3, 178, 58),
         elevation: 1,
@@ -65,69 +65,77 @@ class editProfil extends StatelessWidget {
           height: 100,
         ),
       ),
-      body: Form(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: SizedBox(
-                width: 350,
-                height: 50,
-                child: TextFormField(
-                  controller: urlController,
-                  validator: validateForm,
-                  decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      labelText: "Photo URL",
-                      border: UnderlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 30),
+        child: Center(
+          child: Form(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: SizedBox(
+                    width: 350,
+                    height: 50,
+                    child: TextFormField(
+                      controller: urlController,
+                      validator: validateForm,
+                      decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Color.fromARGB(255, 236, 236, 236),
+                          labelText: "Photo URL",
+                          border: UnderlineInputBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                    ),
+                  ),
                 ),
-              ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: SizedBox(
+                    width: 350,
+                    height: 50,
+                    child: TextFormField(
+                      controller: fnameController,
+                      validator: validateForm,
+                      decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Color.fromARGB(255, 236, 236, 236),
+                          labelText: "Fullname",
+                          border: UnderlineInputBorder(
+                              borderRadius: BorderRadius.circular(10))),
+                    ),
+                  ),
+                ),
+            
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: InkWell(
+                    onTap: () async {
+                      await authService.updateUserData(fnameController.text,
+                          urlController.text);
+                      Navigator.pop(context);
+                    },
+                    child: Ink(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 12,
+                      ),
+                      width: 350,
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 3, 178, 58),
+                          borderRadius: BorderRadius.circular(10)),
+                      child: const Text(
+                        "Edit",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ),
+                )
+              ],
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: SizedBox(
-                width: 350,
-                height: 50,
-                child: TextFormField(
-                  controller: fnameController,
-                  validator: validateForm,
-                  decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      labelText: "Fullname",
-                      border: UnderlineInputBorder(
-                          borderRadius: BorderRadius.circular(10))),
-                ),
-              ),
-            ),
-    
-            InkWell(
-              onTap: () async {
-                await authService.updateUserData(fnameController.text,
-                    urlController.text);
-                Navigator.pop(context);
-              },
-              child: Ink(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 12,
-                ),
-                width: 350,
-                decoration: BoxDecoration(
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.circular(10)),
-                child: const Text(
-                  "Edit",
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 3, 178, 58),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20),
-                  textAlign: TextAlign.center,
-                ),
-              ),
-            )
-          ],
+          ),
         ),
       ),
     );
