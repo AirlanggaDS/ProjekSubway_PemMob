@@ -64,8 +64,8 @@ class Profile extends StatelessWidget {
                     left: 15, top: 10, bottom: 20, right: 15),
                 height: 100,
                 width: 100,
-                child: Image.asset(
-                  _auth!.photoURL ?? 'images/blank.jpg',
+                child: Image.network(
+                  _auth!.photoURL ?? 'https://th.bing.com/th/id/OIP.DGePcjJ-RdJr7oivIaPxGgHaHa?w=217&h=217&c=7&r=0&o=5&dpr=1.3&pid=1.7',
                   fit: BoxFit.contain,
                 ),
               ),

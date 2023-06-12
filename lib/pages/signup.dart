@@ -183,7 +183,6 @@ class _SignUpState extends State<SignUp> {
                                 fnameController.text)
                             .then((value) => authService.updateUserData(
                                 fnameController.text,
-                                urlController.text,
                                 ));
                         Navigator.push(
                             context,

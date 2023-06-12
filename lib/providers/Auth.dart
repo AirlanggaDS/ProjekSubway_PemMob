@@ -38,10 +38,9 @@ class AuthService with ChangeNotifier {
     return await _firebaseAuth.signOut();
   }
 
-  Future<User?> updateUserData(String displayName, String Photo,) async {
+  Future<User?> updateUserData(String displayName,) async {
     await auth.FirebaseAuth.instance.currentUser!
         .updateDisplayName(displayName);
-    await auth.FirebaseAuth.instance.currentUser!.updatePhotoURL(Photo);
     notifyListeners();
     return null;
   }
