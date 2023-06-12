@@ -41,7 +41,7 @@ class _LoginState extends State<Login> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 8, top: 100),
+              padding: const EdgeInsets.only( top: 100),
               child: Container(
                 height: 100,
                 width: 100,
@@ -50,9 +50,10 @@ class _LoginState extends State<Login> {
               ),
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 100, top: 40),
+                  padding: const EdgeInsets.only( top: 40),
                   child: Text("Sign",style: TextStyle(
                     color: Colors.amber,
                     fontSize: 55,
@@ -60,9 +61,9 @@ class _LoginState extends State<Login> {
                   ),),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(top: 40, left: 20),
+                  padding: const EdgeInsets.only(top: 40, left: 10),
                   child: Text("in",style: TextStyle(
-                    fontSize: 50,
+                    fontSize: 55,
                     color: Colors.white,
                     fontWeight: FontWeight.bold
                   ),),
@@ -150,26 +151,27 @@ class _LoginState extends State<Login> {
                                 return AlertDialog(
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.all(
-                                          Radius.circular(15.0))),
+                                          Radius.circular(10))),
                                   backgroundColor:
-                                      Color.fromARGB(255, 34, 34, 34),
+                                      Color.fromARGB(255, 255, 255, 255),
                                   title: const Text(
                                     "Error",
-                                    style: TextStyle(color: Colors.white),
+                                    style: TextStyle(color: Colors.black),
                                   ),
                                   content: Text(
                                     errorMessage,
-                                    style: TextStyle(color: Colors.white),
+                                    style: TextStyle(color: Colors.black),
                                   ),
                                   actions: [
                                     TextButton(
+                                      style: ButtonStyle(backgroundColor: MaterialStatePropertyAll<Color>(Colors.red)),
                                       onPressed: () {
                                         Navigator.pop(context);
                                       },
                                       child: const Text(
                                         "Continue",
                                         style: TextStyle(
-                                            color: Colors.amber,
+                                            color: Colors.black,
                                             fontWeight: FontWeight.bold),
                                       ),
                                     ),
