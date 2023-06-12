@@ -119,7 +119,7 @@ class _ScreenCartState extends State<ScreenCart> {
                                 ],
                               ),
                               Container(
-                                margin: EdgeInsets.only(right: 30),
+                                margin: EdgeInsets.only(right: 10),
                                 child: InkWell(
                                   onTap: () => {
                                     cart.removeFromCart(
