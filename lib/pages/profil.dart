@@ -2,9 +2,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:subway/pages/editProfil.dart';
 
-class Profile extends StatelessWidget {
+class Profile extends StatefulWidget {
   const Profile({super.key});
 
+  @override
+  State<Profile> createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     final _auth = FirebaseAuth.instance.currentUser;
@@ -59,14 +64,16 @@ class Profile extends StatelessWidget {
         children: [
           Column(
             children: [
-              Container(
-                margin: const EdgeInsets.only(
-                    left: 15, top: 10, bottom: 20, right: 15),
-                height: 100,
-                width: 100,
-                child: Image.network(
-                  _auth!.photoURL ?? 'https://th.bing.com/th/id/OIP.DGePcjJ-RdJr7oivIaPxGgHaHa?w=217&h=217&c=7&r=0&o=5&dpr=1.3&pid=1.7',
-                  fit: BoxFit.contain,
+              Padding(
+                padding: const EdgeInsets.only(top: 30,bottom: 30),
+                child: ClipOval(
+                  child: Image.network(
+                    _auth!.photoURL ?? 'https://th.bing.com/th/id/OIP.DGePcjJ-RdJr7oivIaPxGgHaHa?w=217&h=217&c=7&r=0&o=5&dpr=1.3&pid=1.7',
+                    width: 120,
+                    height: 120,
+                    fit: BoxFit.cover,
+                  
+                  ),
                 ),
               ),
               Text(

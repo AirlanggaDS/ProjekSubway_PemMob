@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:provider/provider.dart';
+import 'package:subway/Navbar.dart';
 import 'package:subway/pages/signup.dart';
 import 'package:subway/pages/validator.dart';
 
@@ -142,6 +143,8 @@ class _LoginState extends State<Login> {
                               emailController.text,
                               passwordController.text,
                             );
+                            Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Navbar()));
                             
                           } on FirebaseAuthException catch (error) {
                             errorMessage = error.message!;

@@ -31,15 +31,15 @@ class DrawerSide extends StatelessWidget {
             icon: Icons.shopping_cart,
             text: 'Cart',
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => ScreenCart()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ScreenCart()));
             }),
         _drawerItem(
             icon: Icons.menu_book,
             text: 'Order',
             onTap: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => OrderHistoryPage()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => OrderHistoryPage()));
             }),
         _drawerItem(
             icon: Icons.wallet_giftcard,
@@ -122,9 +122,9 @@ Widget _drawerHeader() {
   return UserAccountsDrawerHeader(
     currentAccountPicture: ClipOval(
       child: Image(
-        image: NetworkImage(_auth!.photoURL ?? 'https://th.bing.com/th/id/OIP.DGePcjJ-RdJr7oivIaPxGgHaHa?w=217&h=217&c=7&r=0&o=5&dpr=1.3&pid=1.7') ,
-        fit: BoxFit.fill,
-      ),
+          image: NetworkImage(_auth!.photoURL ??
+              'https://th.bing.com/th/id/OIP.DGePcjJ-RdJr7oivIaPxGgHaHa?w=217&h=217&c=7&r=0&o=5&dpr=1.3&pid=1.7'),
+          fit: BoxFit.cover),
     ),
     accountName: Text(_auth.displayName.toString()),
     accountEmail: Text(_auth.email.toString()),
