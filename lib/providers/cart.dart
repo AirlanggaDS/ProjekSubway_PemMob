@@ -24,7 +24,7 @@ class Cart with ChangeNotifier {
           itemImg: existingCartItem.itemImg,
           Judul: existingCartItem.Judul,
           price: existingCartItem.price,
-          qty: existingCartItem.qty + 1,
+          qty: existingCartItem.qty + 1, uid: '',
         ),
       );
     } else {
@@ -35,7 +35,7 @@ class Cart with ChangeNotifier {
           itemImg: productImg,
           Judul: title,
           price: price,
-          qty: 1,
+          qty: 1, uid: '',
         ),
       );
     }
@@ -52,7 +52,7 @@ class Cart with ChangeNotifier {
           itemImg: existingCartItem.itemImg,
           Judul: existingCartItem.Judul,
           price: existingCartItem.price,
-          qty: existingCartItem.qty - 1,
+          qty: existingCartItem.qty - 1, uid: '',
         ),
       );
     } else {

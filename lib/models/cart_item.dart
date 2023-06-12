@@ -4,6 +4,7 @@ class CartItem {
   String itemImg;
   double price;
   int qty;
+  String uid; // Add the uid parameter
 
   CartItem({
     required this.id,
@@ -11,6 +12,7 @@ class CartItem {
     required this.itemImg,
     required this.price,
     required this.qty,
+    required this.uid, // Add the uid parameter
   });
 
   factory CartItem.fromMap(Map<String, dynamic> map) {
@@ -20,6 +22,7 @@ class CartItem {
       itemImg: map['itemImg'],
       price: map['price'].toDouble(),
       qty: map['qty'],
+      uid: map['uid'], // Assign the uid parameter
     );
   }
 
@@ -30,6 +33,7 @@ class CartItem {
       'itemImg': itemImg,
       'price': price,
       'qty': qty,
+      'uid': uid, // Include the uid parameter
     };
   }
 }

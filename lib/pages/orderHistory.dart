@@ -116,18 +116,19 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                     final orderItem = orderProvider.orderHistory[index];
                     return Column(
                       children: [
-                        Text(
-                          orderItem.id,
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        
                         SizedBox(height: 10),
                         Container(
                           width: double.infinity,
                           child: Column(
                             children: [
+                              Text(
+                          orderItem.id,
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
                               Row(
                                 children: [
                                   Padding(

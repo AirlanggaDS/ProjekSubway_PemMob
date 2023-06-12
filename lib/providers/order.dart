@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:subway/models/cart_item.dart';
@@ -10,15 +11,18 @@ class OrderProvider with ChangeNotifier {
   List<CartItem> orderHistory = [];
 
   Future<void> placeOrder(List<CartItem> cartItems) async {
+    final uid = FirebaseAuth.instance.currentUser!.uid; // Mendapatkan UID pengguna saat ini
   final url = Uri.parse(
-      'https://subway-18f9d-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json');
+      'https://subway-18f9d-default-rtdb.asia-southeast1.firebasedatabase.app/orders/$uid.json');
 
   final List<Map<String, dynamic>> cartData = cartItems.map((item) {
     final double totalPrice = item.price * item.qty;
-    return item.toMap()..['price'] = totalPrice;
+    return item.toMap()..['price'] = totalPrice..['uid'] = uid; // Tambahkan UID dalam data cart
   }).toList();
-
+  
+  final data = cartData;
   final jsonData = json.encode(cartData);
+  print(url);
 
   try {
     await http.post(
@@ -34,8 +38,10 @@ class OrderProvider with ChangeNotifier {
 }
 
   Future<void> fetchOrderHistory() async {
+  final uid = FirebaseAuth.instance.currentUser!.uid;
+
   final url = Uri.parse(
-      'https://subway-18f9d-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json');
+      'https://subway-18f9d-default-rtdb.asia-southeast1.firebasedatabase.app/orders/$uid.json');
 
   try {
     final response = await http.get(url);
@@ -47,11 +53,12 @@ class OrderProvider with ChangeNotifier {
       if (responseData != null) {
         responseData.forEach((key, data) {
           data.forEach((value) {
-            print(value);
             final Map<String, dynamic> cartData = value;
-            print(cartData);
             final CartItem items = CartItem.fromMap(cartData);
-            orderHistory.add(items);
+
+            if (items.uid == uid) { // Hanya tambahkan order dengan UID yang sesuai dengan pengguna saat ini
+              orderHistory.add(items);
+            }
           });
         });
       }
@@ -70,5 +77,8 @@ class OrderProvider with ChangeNotifier {
     throw Exception('Error fetching order history');
   }
 }
+
+
+
 
 }
